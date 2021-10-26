@@ -145,6 +145,8 @@ namespace TPV
             conexion.Close();
 
             Console.ReadLine();
+
+            Console.ReadLine();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
