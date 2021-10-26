@@ -29,6 +29,7 @@ namespace TPV
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,11 +42,11 @@ namespace TPV
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(188, 56);
+            this.label1.Location = new System.Drawing.Point(205, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 33);
+            this.label1.Size = new System.Drawing.Size(222, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Pantalla de Login";
+            this.label1.Text = "Panel de Login";
             // 
             // btnLogin
             // 
@@ -107,6 +108,7 @@ namespace TPV
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
             this.Text = "Login";
             this.ResumeLayout(false);

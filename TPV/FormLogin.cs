@@ -17,11 +17,7 @@ namespace TPV
         public FormLogin()
         {
             InitializeComponent();
-
-
-            
         }
-
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -35,7 +31,7 @@ namespace TPV
             DataSet d = new DataSet();
             adapter.Fill(d);
 
-            Boolean correcto = false;
+            int correcto = 0;
 
             foreach (DataRow row in d.Tables[0].Rows)
             {
@@ -48,9 +44,9 @@ namespace TPV
 
                 if (tbUsuario.Text.Equals(row["Usuario"]) && tbContrasena.Text.Equals(row["Contrasena"]))
                 {
-                    correcto = true;
+                    correcto = 1;
 
-                    if ((Boolean)row["Admin"] == true){
+                    if ((Int32)row["Admin"] == 1){
 
                         FormAdmin admin = new FormAdmin();
                         admin.Show();
@@ -58,24 +54,20 @@ namespace TPV
 
                     } else
                     {
-                        FormUsuario usuario = new FormUsuario();
+                        FormUsuarios usuario = new FormUsuarios();
                         usuario.Show();
                         this.Hide();
                     }
                 }
             }
 
-            if(!correcto){
+            if(correcto == 0){
                 MessageBox.Show("Usuario incorrecto, introduce de nuevo los datos!!");
             }
 
             conexion.Close();
 
             Console.ReadLine();
-
-
-
-            
         }
     }
 }

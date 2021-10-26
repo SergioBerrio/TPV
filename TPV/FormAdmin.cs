@@ -16,5 +16,19 @@ namespace TPV
         {
             InitializeComponent();
         }
+
+        private void btnAlmacen_Click(object sender, EventArgs e)
+        {
+            FormAlmacen formAlmacen = new FormAlmacen();
+            formAlmacen.Show();
+            this.Hide();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FormUsuarios formUsuarios = new FormUsuarios();
+            formUsuarios.Show();
+            this.Hide();
+        }
     }
 }
