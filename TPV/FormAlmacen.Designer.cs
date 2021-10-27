@@ -29,6 +29,7 @@ namespace TPV
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlmacen));
             this.lbProductos = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -44,13 +45,21 @@ namespace TPV
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.database1DataSet1 = new TPV.Database1DataSet1();
+            this.database1DataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosTableAdapter = new TPV.Database1DataSet1TableAdapters.ProductosTableAdapter();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbProductos
             // 
+            this.lbProductos.DataSource = this.productosBindingSource;
             this.lbProductos.FormattingEnabled = true;
             this.lbProductos.Location = new System.Drawing.Point(21, 28);
             this.lbProductos.Name = "lbProductos";
@@ -67,7 +76,7 @@ namespace TPV
             this.groupBox3.Size = new System.Drawing.Size(234, 152);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Eliminar";
+            this.groupBox3.Text = "Eliminar producto";
             // 
             // btnEliminar
             // 
@@ -99,7 +108,7 @@ namespace TPV
             this.groupBox2.Size = new System.Drawing.Size(242, 221);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Modificar";
+            this.groupBox2.Text = "Modificar producto";
             // 
             // btnModificar
             // 
@@ -146,7 +155,7 @@ namespace TPV
             this.groupBox1.Size = new System.Drawing.Size(233, 221);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Añadir";
+            this.groupBox1.Text = "Añadir producto";
             // 
             // btnAnadir
             // 
@@ -184,6 +193,25 @@ namespace TPV
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
             // 
+            // database1DataSet1
+            // 
+            this.database1DataSet1.DataSetName = "Database1DataSet1";
+            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // database1DataSet1BindingSource
+            // 
+            this.database1DataSet1BindingSource.DataSource = this.database1DataSet1;
+            this.database1DataSet1BindingSource.Position = 0;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "Productos";
+            this.productosBindingSource.DataSource = this.database1DataSet1BindingSource;
+            // 
+            // productosTableAdapter
+            // 
+            this.productosTableAdapter.ClearBeforeFill = true;
+            // 
             // FormAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,12 +225,16 @@ namespace TPV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAlmacen";
             this.Text = "FormAlmacen";
+            this.Load += new System.EventHandler(this.FormAlmacen_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +255,9 @@ namespace TPV
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.BindingSource database1DataSet1BindingSource;
+        private Database1DataSet1 database1DataSet1;
+        private System.Windows.Forms.BindingSource productosBindingSource;
+        private Database1DataSet1TableAdapters.ProductosTableAdapter productosTableAdapter;
     }
 }

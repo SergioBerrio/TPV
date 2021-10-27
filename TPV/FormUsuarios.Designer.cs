@@ -29,25 +29,31 @@ namespace TPV
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuarios));
             this.btnModificar = new System.Windows.Forms.Button();
-            this.tbContrasenaModificar = new System.Windows.Forms.TextBox();
-            this.tbUsuarioModificar = new System.Windows.Forms.TextBox();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.tbContrasena = new System.Windows.Forms.TextBox();
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.btnAtras = new System.Windows.Forms.Button();
             this.lbUsuarios = new System.Windows.Forms.ListBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.tbUsuarioEliminar = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbAdmin = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbContrasenaModificar = new System.Windows.Forms.TextBox();
+            this.tbUsuarioModificar = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbUsuarioEliminar = new System.Windows.Forms.TextBox();
+            this.database1DataSet1 = new TPV.Database1DataSet1();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosTableAdapter = new TPV.Database1DataSet1TableAdapters.ProductosTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnModificar
@@ -60,22 +66,6 @@ namespace TPV
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // tbContrasenaModificar
-            // 
-            this.tbContrasenaModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContrasenaModificar.Location = new System.Drawing.Point(30, 85);
-            this.tbContrasenaModificar.Name = "tbContrasenaModificar";
-            this.tbContrasenaModificar.Size = new System.Drawing.Size(191, 20);
-            this.tbContrasenaModificar.TabIndex = 6;
-            // 
-            // tbUsuarioModificar
-            // 
-            this.tbUsuarioModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuarioModificar.Location = new System.Drawing.Point(30, 49);
-            this.tbUsuarioModificar.Name = "tbUsuarioModificar";
-            this.tbUsuarioModificar.Size = new System.Drawing.Size(191, 20);
-            this.tbUsuarioModificar.TabIndex = 5;
             // 
             // btnAnadir
             // 
@@ -91,18 +81,26 @@ namespace TPV
             // tbContrasena
             // 
             this.tbContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbContrasena.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.tbContrasena.Location = new System.Drawing.Point(32, 85);
             this.tbContrasena.Name = "tbContrasena";
             this.tbContrasena.Size = new System.Drawing.Size(176, 20);
             this.tbContrasena.TabIndex = 2;
+            this.tbContrasena.Text = "Introduce la contraseña";
+            this.tbContrasena.Enter += new System.EventHandler(this.cambiarTextoContrasena);
+            this.tbContrasena.Leave += new System.EventHandler(this.cambiarTextoContrasenaSalir);
             // 
             // tbUsuario
             // 
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsuario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.tbUsuario.Location = new System.Drawing.Point(32, 49);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(176, 20);
             this.tbUsuario.TabIndex = 1;
+            this.tbUsuario.Text = "Introduce el usuario";
+            this.tbUsuario.Enter += new System.EventHandler(this.cambiarTextoUsuario);
+            this.tbUsuario.Leave += new System.EventHandler(this.cambiarTextoUsuarioSalir);
             // 
             // btnAtras
             // 
@@ -116,6 +114,8 @@ namespace TPV
             // 
             // lbUsuarios
             // 
+            this.lbUsuarios.DataSource = this.productosBindingSource;
+            this.lbUsuarios.DisplayMember = "Nombre";
             this.lbUsuarios.FormattingEnabled = true;
             this.lbUsuarios.Location = new System.Drawing.Point(21, 26);
             this.lbUsuarios.Name = "lbUsuarios";
@@ -133,14 +133,6 @@ namespace TPV
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // tbUsuarioEliminar
-            // 
-            this.tbUsuarioEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuarioEliminar.Location = new System.Drawing.Point(32, 60);
-            this.tbUsuarioEliminar.Name = "tbUsuarioEliminar";
-            this.tbUsuarioEliminar.Size = new System.Drawing.Size(176, 20);
-            this.tbUsuarioEliminar.TabIndex = 9;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbAdmin);
@@ -153,7 +145,7 @@ namespace TPV
             this.groupBox1.Size = new System.Drawing.Size(233, 221);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Añadir";
+            this.groupBox1.Text = "Añadir usuario";
             // 
             // cbAdmin
             // 
@@ -168,29 +160,41 @@ namespace TPV
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.btnModificar);
             this.groupBox2.Controls.Add(this.tbContrasenaModificar);
             this.groupBox2.Controls.Add(this.tbUsuarioModificar);
+            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.btnModificar);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(474, 26);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(242, 221);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Modificar";
+            this.groupBox2.Text = "Modificar usuario";
             // 
-            // groupBox3
+            // tbContrasenaModificar
             // 
-            this.groupBox3.Controls.Add(this.btnEliminar);
-            this.groupBox3.Controls.Add(this.tbUsuarioEliminar);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(195, 271);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(234, 152);
-            this.groupBox3.TabIndex = 31;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Eliminar";
+            this.tbContrasenaModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbContrasenaModificar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbContrasenaModificar.Location = new System.Drawing.Point(30, 85);
+            this.tbContrasenaModificar.Name = "tbContrasenaModificar";
+            this.tbContrasenaModificar.Size = new System.Drawing.Size(176, 20);
+            this.tbContrasenaModificar.TabIndex = 11;
+            this.tbContrasenaModificar.Text = "Introduce la contraseña";
+            this.tbContrasenaModificar.Enter += new System.EventHandler(this.cambiarTextoContrasenaModificar);
+            this.tbContrasenaModificar.Leave += new System.EventHandler(this.cambiarTextoContrasenaModificarSalir);
+            // 
+            // tbUsuarioModificar
+            // 
+            this.tbUsuarioModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsuarioModificar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbUsuarioModificar.Location = new System.Drawing.Point(30, 49);
+            this.tbUsuarioModificar.Name = "tbUsuarioModificar";
+            this.tbUsuarioModificar.Size = new System.Drawing.Size(176, 20);
+            this.tbUsuarioModificar.TabIndex = 10;
+            this.tbUsuarioModificar.Text = "Introduce el usuario";
+            this.tbUsuarioModificar.Enter += new System.EventHandler(this.cambiarTextoUsuarioModificar);
+            this.tbUsuarioModificar.Leave += new System.EventHandler(this.cambiarTextoUsuarioModificarSalir);
             // 
             // checkBox1
             // 
@@ -202,6 +206,44 @@ namespace TPV
             this.checkBox1.TabIndex = 9;
             this.checkBox1.Text = "Es Admin";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.tbUsuarioEliminar);
+            this.groupBox3.Controls.Add(this.btnEliminar);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(195, 271);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(234, 152);
+            this.groupBox3.TabIndex = 31;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Eliminar usuario";
+            // 
+            // tbUsuarioEliminar
+            // 
+            this.tbUsuarioEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsuarioEliminar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbUsuarioEliminar.Location = new System.Drawing.Point(32, 57);
+            this.tbUsuarioEliminar.Name = "tbUsuarioEliminar";
+            this.tbUsuarioEliminar.Size = new System.Drawing.Size(176, 20);
+            this.tbUsuarioEliminar.TabIndex = 11;
+            this.tbUsuarioEliminar.Text = "Introduce el usuario";
+            this.tbUsuarioEliminar.Enter += new System.EventHandler(this.cambiarTextoUsuarioEliminar);
+            this.tbUsuarioEliminar.Leave += new System.EventHandler(this.cambiarTextoUsuarioEliminarSalir);
+            // 
+            // database1DataSet1
+            // 
+            this.database1DataSet1.DataSetName = "Database1DataSet1";
+            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "Productos";
+            this.productosBindingSource.DataSource = this.database1DataSet1;
+            // 
+            // productosTableAdapter
+            // 
+            this.productosTableAdapter.ClearBeforeFill = true;
             // 
             // FormUsuarios
             // 
@@ -216,12 +258,15 @@ namespace TPV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUsuarios";
             this.Text = "FormUsuarios";
+            this.Load += new System.EventHandler(this.cargarForm);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,19 +274,22 @@ namespace TPV
         #endregion
 
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.TextBox tbContrasenaModificar;
-        private System.Windows.Forms.TextBox tbUsuarioModificar;
         private System.Windows.Forms.Button btnAnadir;
         private System.Windows.Forms.TextBox tbContrasena;
         private System.Windows.Forms.TextBox tbUsuario;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.ListBox lbUsuarios;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.TextBox tbUsuarioEliminar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox cbAdmin;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox tbContrasenaModificar;
+        private System.Windows.Forms.TextBox tbUsuarioModificar;
+        private System.Windows.Forms.TextBox tbUsuarioEliminar;
+        private Database1DataSet1 database1DataSet1;
+        private System.Windows.Forms.BindingSource productosBindingSource;
+        private Database1DataSet1TableAdapters.ProductosTableAdapter productosTableAdapter;
     }
 }

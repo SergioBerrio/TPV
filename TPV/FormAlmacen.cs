@@ -48,5 +48,12 @@ namespace TPV
             formAdmin.Show();
             this.Hide();
         }
+
+        private void FormAlmacen_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'database1DataSet1.Productos' Puede moverla o quitarla según sea necesario.
+            this.productosTableAdapter.Fill(this.database1DataSet1.Productos);
+
+        }
     }
 }
