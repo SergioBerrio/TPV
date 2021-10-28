@@ -85,7 +85,7 @@ namespace TPV
                 esAdmin = 0;
             }
 
-            String query = "UPDATE Usuarios SET Usuario = '" + tbUsuario.Text + "', Contrasena = '" + tbContrasena.Text + "', Admin = " + esAdmin + " WHERE Usuario = '" + lbUsuarios.SelectedItem + "'";
+            String query = "UPDATE Usuarios SET Usuario = '" + tbUsuarioModificar.Text + "', Contrasena = '" + tbContrasenaModificar.Text + "', Admin = " + esAdmin + " WHERE Usuario = '" + lbUsuarios.SelectedItem + "'";
 
             OleDbCommand comando = new OleDbCommand(query, conexion);
             comando.ExecuteNonQuery();
@@ -135,7 +135,7 @@ namespace TPV
                 esAdmin = 0;
             }
 
-            String query = "DELETE * FROM Usuarios WHERE Usuario = '" + tbUsuarioEliminar.Text + "'";
+            String query = "DELETE * FROM Usuarios WHERE Usuario = '" + lbUsuarios.SelectedItem + "'";
 
             OleDbCommand comando = new OleDbCommand(query, conexion);
             comando.ExecuteNonQuery();
@@ -161,9 +161,6 @@ namespace TPV
             conexion.Close();
 
             Console.ReadLine();
-
-            tbUsuarioEliminar.Text = "Introduce el usuario";
-            tbUsuarioEliminar.ForeColor = Color.Silver;
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -247,28 +244,8 @@ namespace TPV
             }
         }
 
-        private void cambiarTextoUsuarioEliminar(object sender, EventArgs e)
-        {
-            if (tbUsuarioEliminar.Text == "Introduce el usuario")
-            {
-                tbUsuarioEliminar.Text = "";
-                tbUsuarioEliminar.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoUsuarioEliminarSalir(object sender, EventArgs e)
-        {
-            if (tbUsuarioEliminar.Text == "")
-            {
-                tbUsuarioEliminar.Text = "Introduce el usuario";
-                tbUsuarioEliminar.ForeColor = Color.Silver;
-            }
-        }
-
         private void cargarForm(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'database1DataSet1.Productos' Puede moverla o quitarla según sea necesario.
-            this.productosTableAdapter.Fill(this.database1DataSet1.Productos);
             OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();

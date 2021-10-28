@@ -29,7 +29,6 @@ namespace TPV
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuarios));
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAnadir = new System.Windows.Forms.Button();
@@ -45,15 +44,9 @@ namespace TPV
             this.tbUsuarioModificar = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tbUsuarioEliminar = new System.Windows.Forms.TextBox();
-            this.database1DataSet1 = new TPV.Database1DataSet1();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productosTableAdapter = new TPV.Database1DataSet1TableAdapters.ProductosTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnModificar
@@ -104,7 +97,7 @@ namespace TPV
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(604, 394);
+            this.btnAtras.Location = new System.Drawing.Point(604, 339);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(112, 29);
             this.btnAtras.TabIndex = 11;
@@ -114,18 +107,16 @@ namespace TPV
             // 
             // lbUsuarios
             // 
-            this.lbUsuarios.DataSource = this.productosBindingSource;
-            this.lbUsuarios.DisplayMember = "Nombre";
             this.lbUsuarios.FormattingEnabled = true;
             this.lbUsuarios.Location = new System.Drawing.Point(21, 26);
             this.lbUsuarios.Name = "lbUsuarios";
-            this.lbUsuarios.Size = new System.Drawing.Size(146, 394);
+            this.lbUsuarios.Size = new System.Drawing.Size(146, 342);
             this.lbUsuarios.TabIndex = 14;
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(32, 97);
+            this.btnEliminar.Location = new System.Drawing.Point(32, 45);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(176, 29);
             this.btnEliminar.TabIndex = 10;
@@ -209,47 +200,20 @@ namespace TPV
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.tbUsuarioEliminar);
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(195, 271);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(234, 152);
+            this.groupBox3.Size = new System.Drawing.Size(234, 97);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Eliminar usuario";
-            // 
-            // tbUsuarioEliminar
-            // 
-            this.tbUsuarioEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuarioEliminar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tbUsuarioEliminar.Location = new System.Drawing.Point(32, 57);
-            this.tbUsuarioEliminar.Name = "tbUsuarioEliminar";
-            this.tbUsuarioEliminar.Size = new System.Drawing.Size(176, 20);
-            this.tbUsuarioEliminar.TabIndex = 11;
-            this.tbUsuarioEliminar.Text = "Introduce el usuario";
-            this.tbUsuarioEliminar.Enter += new System.EventHandler(this.cambiarTextoUsuarioEliminar);
-            this.tbUsuarioEliminar.Leave += new System.EventHandler(this.cambiarTextoUsuarioEliminarSalir);
-            // 
-            // database1DataSet1
-            // 
-            this.database1DataSet1.DataSetName = "Database1DataSet1";
-            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "Productos";
-            this.productosBindingSource.DataSource = this.database1DataSet1;
-            // 
-            // productosTableAdapter
-            // 
-            this.productosTableAdapter.ClearBeforeFill = true;
             // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 442);
+            this.ClientSize = new System.Drawing.Size(734, 383);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -264,9 +228,6 @@ namespace TPV
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,9 +248,5 @@ namespace TPV
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox tbContrasenaModificar;
         private System.Windows.Forms.TextBox tbUsuarioModificar;
-        private System.Windows.Forms.TextBox tbUsuarioEliminar;
-        private Database1DataSet1 database1DataSet1;
-        private System.Windows.Forms.BindingSource productosBindingSource;
-        private Database1DataSet1TableAdapters.ProductosTableAdapter productosTableAdapter;
     }
 }

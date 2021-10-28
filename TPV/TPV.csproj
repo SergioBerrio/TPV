@@ -48,16 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database1DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FormAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAlmacen.Designer.cs">
       <DependentUpon>FormAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsumirProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsumirProductos.Designer.cs">
+      <DependentUpon>FormConsumirProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHacerReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHacerReservas.Designer.cs">
+      <DependentUpon>FormHacerReservas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -77,6 +84,12 @@
     <Compile Include="FormReservas.Designer.cs">
       <DependentUpon>FormReservas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuario.Designer.cs">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +107,9 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuario.resx">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,17 +122,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Database1DataSet1.xsc">
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Database1DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database1DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database1DataSet1.xss">
-      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
