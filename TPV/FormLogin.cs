@@ -54,7 +54,7 @@ namespace TPV
 
                     } else
                     {
-                        FormUsuario usuario = new FormUsuario();
+                        FormUsuario usuario = new FormUsuario(tbUsuario.Text);
                         usuario.Show();
                         this.Hide();
                     }

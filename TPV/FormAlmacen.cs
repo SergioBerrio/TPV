@@ -24,7 +24,7 @@ namespace TPV
 
             conexion.Open();
 
-            String query = "INSERT INTO productos (Nombre, Precio, Cantidad) VALUES ( '" + tbProducto.Text + "', '" + tbPrecio.Text + "', '" + tbCantidad.Text + "')";
+            String query = "INSERT INTO Productos (Nombre, Precio, Cantidad) VALUES ( '" + tbProducto.Text + "', '" + tbPrecio.Text + "', '" + tbCantidad.Text + "')";
 
             OleDbCommand comando = new OleDbCommand(query, conexion);
             comando.ExecuteNonQuery();

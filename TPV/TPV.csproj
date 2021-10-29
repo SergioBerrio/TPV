@@ -104,6 +104,9 @@
     <EmbeddedResource Include="FormAlmacen.resx">
       <DependentUpon>FormAlmacen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHacerReservas.resx">
+      <DependentUpon>FormHacerReservas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

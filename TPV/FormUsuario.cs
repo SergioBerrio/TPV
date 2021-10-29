@@ -12,9 +12,12 @@ namespace TPV
 {
     public partial class FormUsuario : Form
     {
-        public FormUsuario()
+        private String nombre;
+
+        public FormUsuario(String nombre)
         {
             InitializeComponent();
+            this.nombre = nombre;
         }
 
         private void btnConsumirProductos_Click(object sender, EventArgs e)
@@ -26,7 +29,7 @@ namespace TPV
 
         private void btnHacerReservas_Click(object sender, EventArgs e)
         {
-            FormHacerReservas formHacerReservas = new FormHacerReservas();
+            FormHacerReservas formHacerReservas = new FormHacerReservas(nombre);
             formHacerReservas.Show();
             this.Hide();
         }

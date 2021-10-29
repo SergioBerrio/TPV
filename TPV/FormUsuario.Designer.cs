@@ -62,7 +62,7 @@ namespace TPV
             this.btnHacerReservas.Name = "btnHacerReservas";
             this.btnHacerReservas.Size = new System.Drawing.Size(204, 147);
             this.btnHacerReservas.TabIndex = 7;
-            this.btnHacerReservas.Text = "Consumir productos";
+            this.btnHacerReservas.Text = "Hacer reservas";
             this.btnHacerReservas.UseVisualStyleBackColor = true;
             this.btnHacerReservas.Click += new System.EventHandler(this.btnHacerReservas_Click);
             // 
