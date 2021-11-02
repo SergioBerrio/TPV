@@ -29,15 +29,17 @@ namespace TPV
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.btnAlmacen = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.lblAdmin = new System.Windows.Forms.Label();
+            this.btnCerrarSesión = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAlmacen
             // 
             this.btnAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlmacen.Location = new System.Drawing.Point(96, 171);
+            this.btnAlmacen.Location = new System.Drawing.Point(38, 121);
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.Size = new System.Drawing.Size(204, 147);
             this.btnAlmacen.TabIndex = 0;
@@ -48,7 +50,7 @@ namespace TPV
             // btnUsuarios
             // 
             this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Location = new System.Drawing.Point(493, 171);
+            this.btnUsuarios.Location = new System.Drawing.Point(287, 121);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(204, 147);
             this.btnUsuarios.TabIndex = 1;
@@ -60,20 +62,33 @@ namespace TPV
             // 
             this.lblAdmin.AutoSize = true;
             this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmin.Location = new System.Drawing.Point(207, 50);
+            this.lblAdmin.Location = new System.Drawing.Point(74, 49);
             this.lblAdmin.Name = "lblAdmin";
             this.lblAdmin.Size = new System.Drawing.Size(389, 33);
             this.lblAdmin.TabIndex = 2;
             this.lblAdmin.Text = "Panel de control del Admin";
             // 
+            // btnCerrarSesión
+            // 
+            this.btnCerrarSesión.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesión.Location = new System.Drawing.Point(172, 302);
+            this.btnCerrarSesión.Name = "btnCerrarSesión";
+            this.btnCerrarSesión.Size = new System.Drawing.Size(184, 57);
+            this.btnCerrarSesión.TabIndex = 9;
+            this.btnCerrarSesión.Text = "Cerrar sesión";
+            this.btnCerrarSesión.UseVisualStyleBackColor = true;
+            this.btnCerrarSesión.Click += new System.EventHandler(this.btnCerrarSesión_Click);
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(523, 387);
+            this.Controls.Add(this.btnCerrarSesión);
             this.Controls.Add(this.lblAdmin);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnAlmacen);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdmin";
             this.Text = "FormAdmin";
             this.ResumeLayout(false);
@@ -86,5 +101,6 @@ namespace TPV
         private System.Windows.Forms.Button btnAlmacen;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Label lblAdmin;
+        private System.Windows.Forms.Button btnCerrarSesión;
     }
 }

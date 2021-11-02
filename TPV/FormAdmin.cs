@@ -30,5 +30,12 @@ namespace TPV
             formUsuarios.Show();
             this.Hide();
         }
+
+        private void btnCerrarSesión_Click(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+            this.Hide();
+        }
     }
 }

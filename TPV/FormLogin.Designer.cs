@@ -42,18 +42,18 @@ namespace TPV
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(205, 56);
+            this.label1.Location = new System.Drawing.Point(112, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 33);
+            this.label1.Size = new System.Drawing.Size(201, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Panel de Login";
+            this.label1.Text = "Iniciar sesión";
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(223, 323);
+            this.btnLogin.Location = new System.Drawing.Point(118, 250);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(176, 36);
+            this.btnLogin.Size = new System.Drawing.Size(195, 36);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Iniciar sesión";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -62,29 +62,27 @@ namespace TPV
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(115, 147);
+            this.label2.Location = new System.Drawing.Point(72, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 31);
+            this.label2.Size = new System.Drawing.Size(103, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usuario";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(408, 147);
+            this.label3.Location = new System.Drawing.Point(29, 182);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 31);
+            this.label3.Size = new System.Drawing.Size(146, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña";
             // 
             // tbUsuario
             // 
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.Location = new System.Drawing.Point(78, 218);
+            this.tbUsuario.Location = new System.Drawing.Point(221, 115);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(177, 26);
             this.tbUsuario.TabIndex = 3;
@@ -92,7 +90,7 @@ namespace TPV
             // tbContrasena
             // 
             this.tbContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContrasena.Location = new System.Drawing.Point(395, 218);
+            this.tbContrasena.Location = new System.Drawing.Point(221, 182);
             this.tbContrasena.Name = "tbContrasena";
             this.tbContrasena.Size = new System.Drawing.Size(177, 26);
             this.tbContrasena.TabIndex = 4;
@@ -101,7 +99,7 @@ namespace TPV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 394);
+            this.ClientSize = new System.Drawing.Size(421, 315);
             this.Controls.Add(this.tbContrasena);
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.label3);

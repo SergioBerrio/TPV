@@ -29,6 +29,7 @@ namespace TPV
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHacerReservas));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -39,6 +40,7 @@ namespace TPV
             this.tbFecha = new System.Windows.Forms.TextBox();
             this.btnAtras = new System.Windows.Forms.Button();
             this.lbReservas = new System.Windows.Forms.ListBox();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -50,7 +52,7 @@ namespace TPV
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(196, 213);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(223, 104);
+            this.groupBox3.Size = new System.Drawing.Size(272, 104);
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Eliminar reserva";
@@ -60,7 +62,7 @@ namespace TPV
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(19, 46);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(176, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(230, 29);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -154,16 +156,30 @@ namespace TPV
             this.lbReservas.Size = new System.Drawing.Size(146, 290);
             this.lbReservas.TabIndex = 33;
             // 
+            // cbTipo
+            // 
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
+            "Comida",
+            "Cena"});
+            this.cbTipo.Location = new System.Drawing.Point(490, 226);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(125, 21);
+            this.cbTipo.TabIndex = 37;
+            // 
             // FormHacerReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 331);
+            this.ClientSize = new System.Drawing.Size(775, 338);
+            this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lbReservas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormHacerReservas";
             this.Text = "FormHacerReservas";
             this.Load += new System.EventHandler(this.FormHacerReservas_Load);
@@ -188,5 +204,6 @@ namespace TPV
         private System.Windows.Forms.TextBox tbFecha;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.ListBox lbReservas;
+        private System.Windows.Forms.ComboBox cbTipo;
     }
 }

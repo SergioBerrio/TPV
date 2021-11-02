@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,11 +25,100 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
+            String regexp = "(0[1-9]|1[0-2])/(0[1-9]|[1-2][0-9]|3[0-1])/[0-9]{4}-(2[0-3]|[01][0-9]):[0-5][0-9]";
+            Match m = Regex.Match(tbFecha.Text, regexp);
+
+            if (m.Success)
+            {
+                OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+
+                conexion.Open();
+
+                String query = "INSERT INTO Reservas (Fecha, id_usuarioLogeado, Tipo) VALUES ( '" + tbFecha.Text + "', " + id + ", '" + cbTipo.Text + "')";
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+                comando.ExecuteNonQuery();
+
+                lbReservas.Items.Clear();
+
+                String query2 = "SELECT * FROM Reservas WHERE id_usuarioLogeado = " + id;
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
+
+                DataSet d = new DataSet();
+                adapter.Fill(d);
+
+                foreach (DataRow row in d.Tables[0].Rows)
+                {
+                    lbReservas.Items.Add(row["Fecha"]);
+
+                }
+
+                conexion.Close();
+
+                Console.ReadLine();
+
+                tbFecha.Text = "Introduce la fecha (formato dd/mm/aaaa-hora)";
+                tbFecha.ForeColor = Color.Silver;
+
+            } else {
+
+                MessageBox.Show("Fecha introducida incorrecta, introduce una fecha con el formato correcto!! (formato dd/mm/aaaa-hora)");
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            
+            String regexp = "(0[1-9]|1[0-2])/(0[1-9]|[1-2][0-9]|3[0-1])/[0-9]{4}-(2[0-3]|[01][0-9]):[0-5][0-9]";
+            Match m = Regex.Match(tbFechaModificar.Text, regexp);
+
+            if (m.Success)
+            {
+                OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+
+                conexion.Open();
+
+                String query = "UPDATE Reservas SET Fecha = '" + tbFechaModificar.Text + "', Tipo = '" + cbTipo.Text + "' WHERE Fecha = '" + lbReservas.SelectedItem + "'";
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+                comando.ExecuteNonQuery();
+
+                lbReservas.Items.Clear();
+
+                String query2 = "SELECT * FROM Reservas WHERE id_usuarioLogeado = " + id;
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
+
+                DataSet d = new DataSet();
+                adapter.Fill(d);
+
+                foreach (DataRow row in d.Tables[0].Rows)
+                {
+                    lbReservas.Items.Add(row["Fecha"]);
+
+                }
+
+                conexion.Close();
+
+                Console.ReadLine();
+
+                tbFechaModificar.Text = "Introduce la fecha (formato dd/mm/aaaa-hora)";
+                tbFechaModificar.ForeColor = Color.Silver;
+
+            } else
+            {
+                MessageBox.Show("Fecha introducida incorrecta, introduce una fecha con el formato correcto!! (formato dd/mm/aaaa-hora)");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
             OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
-            String query = "INSERT INTO Reservas (Fecha, id_usuarioLogeado) VALUES ( '" + tbFecha.Text + "', " + id + ")";
+            String query = "DELETE * FROM Reservas WHERE Fecha = '" + lbReservas.SelectedItem + "'";
 
             OleDbCommand comando = new OleDbCommand(query, conexion);
             comando.ExecuteNonQuery();
@@ -45,81 +135,6 @@ namespace TPV
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 lbReservas.Items.Add(row["Fecha"]);
-
-                Console.WriteLine(row["Fecha"]);
-
-            }
-
-            conexion.Close();
-
-            Console.ReadLine();
-
-            tbFecha.Text = "Introduce la fecha (formato dd/mm/aaaa-hora)";
-            tbFecha.ForeColor = Color.Silver;
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
-
-            conexion.Open();
-
-            String query = "UPDATE Reservas SET Fecha = '" + tbFechaModificar.Text + "' WHERE Id = " + lbReservas.SelectedItem;
-
-            OleDbCommand comando = new OleDbCommand(query, conexion);
-            comando.ExecuteNonQuery();
-
-            lbReservas.Items.Clear();
-
-            String query2 = "SELECT * FROM Reservas";
-
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
-
-            DataSet d = new DataSet();
-            adapter.Fill(d);
-
-            foreach (DataRow row in d.Tables[0].Rows)
-            {
-                //lbReservas.Items.Add(row["Id"]);
-                lbReservas.Items.Add(System.Security.Principal.WindowsIdentity.GetCurrent().User);
-
-                Console.WriteLine(row["Id"]);
-            }
-
-            conexion.Close();
-
-            Console.ReadLine();
-
-            tbFechaModificar.Text = "Introduce la fecha (formato dd/mm/aaaa-hora)";
-            tbFechaModificar.ForeColor = Color.Silver;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
-
-            conexion.Open();
-
-            String query = "DELETE * FROM Reservas WHERE Id = " + lbReservas.SelectedItem;
-
-            OleDbCommand comando = new OleDbCommand(query, conexion);
-            comando.ExecuteNonQuery();
-
-            lbReservas.Items.Clear();
-
-            String query2 = "SELECT * FROM Reservas";
-
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
-
-            DataSet d = new DataSet();
-            adapter.Fill(d);
-
-            foreach (DataRow row in d.Tables[0].Rows)
-            {
-                //lbReservas.Items.Add(row["Id"]);
-                lbReservas.Items.Add(System.Security.Principal.WindowsIdentity.GetCurrent().User);
-
-                Console.WriteLine(row["Id"]);
 
             }
 
@@ -169,6 +184,8 @@ namespace TPV
 
         private void FormHacerReservas_Load(object sender, EventArgs e)
         {
+            cbTipo.SelectedItem = "Comida";
+
             OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();

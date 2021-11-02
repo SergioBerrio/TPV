@@ -33,5 +33,12 @@ namespace TPV
             formHacerReservas.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+            this.Hide();
+        }
     }
 }
