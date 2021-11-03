@@ -41,9 +41,11 @@ namespace TPV
             this.btnAtras = new System.Windows.Forms.Button();
             this.lbReservas = new System.Windows.Forms.ListBox();
             this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -60,7 +62,7 @@ namespace TPV
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(19, 46);
+            this.btnEliminar.Location = new System.Drawing.Point(19, 49);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(230, 29);
             this.btnEliminar.TabIndex = 10;
@@ -159,21 +161,33 @@ namespace TPV
             // cbTipo
             // 
             this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipo.FormattingEnabled = true;
             this.cbTipo.Items.AddRange(new object[] {
             "Comida",
             "Cena"});
-            this.cbTipo.Location = new System.Drawing.Point(490, 226);
+            this.cbTipo.Location = new System.Drawing.Point(21, 57);
             this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(125, 21);
+            this.cbTipo.Size = new System.Drawing.Size(118, 21);
             this.cbTipo.TabIndex = 37;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.cbTipo);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(486, 213);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(153, 104);
+            this.groupBox4.TabIndex = 38;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tipo de reserva";
             // 
             // FormHacerReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 338);
-            this.Controls.Add(this.cbTipo);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -188,6 +202,7 @@ namespace TPV
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -205,5 +220,6 @@ namespace TPV
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.ListBox lbReservas;
         private System.Windows.Forms.ComboBox cbTipo;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

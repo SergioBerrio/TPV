@@ -35,11 +35,11 @@ namespace TPV
 
             foreach (DataRow row in d.Tables[0].Rows)
             {
-                Console.WriteLine("ID: " + row["Id"]);
+                /*Console.WriteLine("ID: " + row["Id"]);
                 Console.WriteLine("Usuario: " + row["Usuario"]);
                 Console.WriteLine("Contraseña: " + row["Contrasena"]);
                 Console.WriteLine("Es Admin: " + row["Admin"]);
-                Console.WriteLine("");
+                Console.WriteLine("");*/
 
 
                 if (tbUsuario.Text.Equals(row["Usuario"]) && tbContrasena.Text.Equals(row["Contrasena"]))
