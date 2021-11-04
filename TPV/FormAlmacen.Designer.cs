@@ -223,6 +223,7 @@ namespace TPV
             this.Controls.Add(this.lbProductos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAlmacen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAlmacen";
             this.Load += new System.EventHandler(this.FormAlmacen_Load);
             this.groupBox3.ResumeLayout(false);

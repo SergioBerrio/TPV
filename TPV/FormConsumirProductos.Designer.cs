@@ -30,15 +30,23 @@ namespace TPV
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsumirProductos));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnAbajo1 = new System.Windows.Forms.Button();
-            this.btnArriba1 = new System.Windows.Forms.Button();
-            this.btnAbajo2 = new System.Windows.Forms.Button();
-            this.btnArriba2 = new System.Windows.Forms.Button();
             this.lbProductos = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.btnAbajo = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.btnArriba = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Impuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -47,97 +55,157 @@ namespace TPV
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(340, 282);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(426, 147);
-            this.listBox1.TabIndex = 1;
-            // 
-            // btnAbajo1
-            // 
-            this.btnAbajo1.Location = new System.Drawing.Point(581, 119);
-            this.btnAbajo1.Name = "btnAbajo1";
-            this.btnAbajo1.Size = new System.Drawing.Size(66, 51);
-            this.btnAbajo1.TabIndex = 5;
-            this.btnAbajo1.UseVisualStyleBackColor = true;
-            this.btnAbajo1.Click += new System.EventHandler(this.btnAbajo1_Click);
-            // 
-            // btnArriba1
-            // 
-            this.btnArriba1.Location = new System.Drawing.Point(581, 43);
-            this.btnArriba1.Name = "btnArriba1";
-            this.btnArriba1.Size = new System.Drawing.Size(66, 51);
-            this.btnArriba1.TabIndex = 4;
-            this.btnArriba1.UseVisualStyleBackColor = true;
-            this.btnArriba1.Click += new System.EventHandler(this.btnArriba1_Click);
-            // 
-            // btnAbajo2
-            // 
-            this.btnAbajo2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAbajo2.Location = new System.Drawing.Point(253, 372);
-            this.btnAbajo2.Name = "btnAbajo2";
-            this.btnAbajo2.Size = new System.Drawing.Size(66, 57);
-            this.btnAbajo2.TabIndex = 3;
-            this.btnAbajo2.UseVisualStyleBackColor = true;
-            this.btnAbajo2.Click += new System.EventHandler(this.btnAbajo2_Click);
-            // 
-            // btnArriba2
-            // 
-            this.btnArriba2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnArriba2.Location = new System.Drawing.Point(253, 282);
-            this.btnArriba2.Name = "btnArriba2";
-            this.btnArriba2.Size = new System.Drawing.Size(66, 58);
-            this.btnArriba2.TabIndex = 2;
-            this.btnArriba2.UseVisualStyleBackColor = true;
-            this.btnArriba2.Click += new System.EventHandler(this.btnArriba2_Click);
-            // 
             // lbProductos
             // 
             this.lbProductos.FormattingEnabled = true;
             this.lbProductos.Location = new System.Drawing.Point(27, 277);
             this.lbProductos.Name = "lbProductos";
+            this.lbProductos.ScrollAlwaysVisible = true;
             this.lbProductos.Size = new System.Drawing.Size(203, 147);
             this.lbProductos.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(510, 221);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nombre,
+            this.Precio,
+            this.Cantidad,
+            this.Impuesto,
+            this.Importe});
+            this.dgvProductos.Location = new System.Drawing.Point(27, 29);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(643, 221);
+            this.dgvProductos.TabIndex = 7;
+            // 
+            // btnAbajo
+            // 
+            this.btnAbajo.Location = new System.Drawing.Point(408, 277);
+            this.btnAbajo.Name = "btnAbajo";
+            this.btnAbajo.Size = new System.Drawing.Size(121, 48);
+            this.btnAbajo.TabIndex = 2;
+            this.btnAbajo.UseVisualStyleBackColor = true;
+            this.btnAbajo.Click += new System.EventHandler(this.btnAbajo_Click);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(549, 389);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(121, 35);
+            this.btnAtras.TabIndex = 33;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // btnArriba
+            // 
+            this.btnArriba.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnArriba.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArriba.ForeColor = System.Drawing.Color.White;
+            this.btnArriba.Image = global::TPV.Properties.Resources.printer_78349;
+            this.btnArriba.Location = new System.Drawing.Point(549, 277);
+            this.btnArriba.Name = "btnArriba";
+            this.btnArriba.Size = new System.Drawing.Size(121, 48);
+            this.btnArriba.TabIndex = 3;
+            this.btnArriba.Text = "Imprimir";
+            this.btnArriba.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnArriba.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnArriba.UseVisualStyleBackColor = false;
+            this.btnArriba.Click += new System.EventHandler(this.btnArriba_Click);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Impuesto
+            // 
+            this.Impuesto.HeaderText = "Impuesto";
+            this.Impuesto.Name = "Impuesto";
+            // 
+            // Importe
+            // 
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(265, 404);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(119, 20);
+            this.textBox1.TabIndex = 34;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(265, 358);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(119, 20);
+            this.textBox2.TabIndex = 35;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(265, 292);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(119, 20);
+            this.textBox3.TabIndex = 36;
             // 
             // FormConsumirProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(695, 450);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.lbProductos);
-            this.Controls.Add(this.btnAbajo1);
-            this.Controls.Add(this.btnArriba1);
-            this.Controls.Add(this.btnAbajo2);
-            this.Controls.Add(this.btnArriba2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btnArriba);
+            this.Controls.Add(this.btnAbajo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConsumirProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormConsumirProductos";
             this.Load += new System.EventHandler(this.FormConsumirProductos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button btnArriba2;
-        private System.Windows.Forms.Button btnAbajo2;
-        private System.Windows.Forms.Button btnAbajo1;
-        private System.Windows.Forms.Button btnArriba1;
+        private System.Windows.Forms.Button btnAbajo;
+        private System.Windows.Forms.Button btnArriba;
         private System.Windows.Forms.ListBox lbProductos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Impuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

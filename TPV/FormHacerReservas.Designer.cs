@@ -142,9 +142,9 @@ namespace TPV
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(645, 288);
+            this.btnAtras.Location = new System.Drawing.Point(658, 286);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(112, 29);
+            this.btnAtras.Size = new System.Drawing.Size(99, 31);
             this.btnAtras.TabIndex = 32;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
@@ -195,6 +195,7 @@ namespace TPV
             this.Controls.Add(this.lbReservas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormHacerReservas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHacerReservas";
             this.Load += new System.EventHandler(this.FormHacerReservas_Load);
             this.groupBox3.ResumeLayout(false);

@@ -221,6 +221,7 @@ namespace TPV
             this.Controls.Add(this.lbUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUsuarios";
             this.Load += new System.EventHandler(this.cargarForm);
             this.groupBox1.ResumeLayout(false);

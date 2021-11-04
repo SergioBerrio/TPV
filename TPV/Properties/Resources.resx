@@ -118,34 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="back_arrow_14447" type="System.Resources.ResXFileRef, System.Windows.Forms">
-   
+  <data name="istockphoto-1152174623-170667a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\istockphoto-1152174623-170667a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1486485559-118arrow-down-download-downloads-downloading-save_81191 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1486485559-118arrow-down-download-downloads-downloading-save_81191 (2).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow_up_bold_circle_outline_icon_139942" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow_up_bold_circle_outline_icon_139942.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="uparrow_83726" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uparrow_83726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="downarrow_83759" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\downarrow_83759.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="downarrow_83759 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\downarrow_83759 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1486485559-118arrow-down-download-downloads-downloading-save_81191" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1486485559-118arrow-down-download-downloads-downloading-save_81191.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="serike" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\serike.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1486485559-118arrow-down-download-downloads-downloading-save_81191 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1486485559-118arrow-down-download-downloads-downloading-save_81191 (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngwing.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngwing.com.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="uparrow_83726" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\uparrow_83726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="printer_78349" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer_78349.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -92,6 +92,7 @@ namespace TPV
             this.tbContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContrasena.Location = new System.Drawing.Point(221, 182);
             this.tbContrasena.Name = "tbContrasena";
+            this.tbContrasena.PasswordChar = '*';
             this.tbContrasena.Size = new System.Drawing.Size(177, 26);
             this.tbContrasena.TabIndex = 4;
             // 
@@ -99,7 +100,7 @@ namespace TPV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 315);
+            this.ClientSize = new System.Drawing.Size(434, 315);
             this.Controls.Add(this.tbContrasena);
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.label3);
@@ -108,6 +109,7 @@ namespace TPV
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -90,6 +90,7 @@ namespace TPV
             this.Controls.Add(this.btnAlmacen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdmin";
             this.ResumeLayout(false);
             this.PerformLayout();
