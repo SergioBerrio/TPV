@@ -53,7 +53,7 @@ namespace TPV
 
         private void FormConsumirProductos_Load(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -75,12 +75,14 @@ namespace TPV
 
             ArrayList myAL = new ArrayList();
 
+            dgvProductos.ColumnCount = 5;
+
             dgvProductos.Columns[0].Name = "Id";
             dgvProductos.Columns[1].Name = "Nombre";
             dgvProductos.Columns[2].Name = "Precio";
             dgvProductos.Columns[3].Name = "Cantidad";
             dgvProductos.Columns[4].Name = "Impuesto";
-
+               
             conexion.Close();
             conexion.Open();
 
@@ -90,7 +92,7 @@ namespace TPV
             adapter2.Fill(d2);
 
             DataGridViewRow rowDGV = (DataGridViewRow)dgvProductos.Rows[0].Clone();
-
+           
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 String[] rowProducto = new String[5];
