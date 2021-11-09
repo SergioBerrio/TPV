@@ -38,9 +38,7 @@ namespace TPV
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Impuestos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnConsumirProductos = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
-            this.btnImprimirFactura = new System.Windows.Forms.Button();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.tbImpuestos = new System.Windows.Forms.TextBox();
             this.tbSubtotal = new System.Windows.Forms.TextBox();
@@ -49,6 +47,8 @@ namespace TPV
             this.lblImpuestos = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lbSeleccionProductos = new System.Windows.Forms.ListBox();
+            this.btnEliminarProducto = new System.Windows.Forms.Button();
+            this.btnImprimirFactura = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gbImportes.SuspendLayout();
             this.SuspendLayout();
@@ -109,43 +109,16 @@ namespace TPV
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             // 
-            // btnConsumirProductos
-            // 
-            this.btnConsumirProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsumirProductos.Location = new System.Drawing.Point(693, 329);
-            this.btnConsumirProductos.Name = "btnConsumirProductos";
-            this.btnConsumirProductos.Size = new System.Drawing.Size(168, 48);
-            this.btnConsumirProductos.TabIndex = 2;
-            this.btnConsumirProductos.Text = "Consumir productos";
-            this.btnConsumirProductos.UseVisualStyleBackColor = true;
-            this.btnConsumirProductos.Click += new System.EventHandler(this.btnConsumirProductos_Click);
-            // 
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(693, 408);
+            this.btnAtras.Location = new System.Drawing.Point(693, 400);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(168, 35);
+            this.btnAtras.Size = new System.Drawing.Size(168, 43);
             this.btnAtras.TabIndex = 33;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // btnImprimirFactura
-            // 
-            this.btnImprimirFactura.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnImprimirFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimirFactura.ForeColor = System.Drawing.Color.White;
-            this.btnImprimirFactura.Image = global::TPV.Properties.Resources.printer_78349;
-            this.btnImprimirFactura.Location = new System.Drawing.Point(693, 275);
-            this.btnImprimirFactura.Name = "btnImprimirFactura";
-            this.btnImprimirFactura.Size = new System.Drawing.Size(168, 48);
-            this.btnImprimirFactura.TabIndex = 3;
-            this.btnImprimirFactura.Text = "Imprimir factura";
-            this.btnImprimirFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImprimirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImprimirFactura.UseVisualStyleBackColor = false;
-            this.btnImprimirFactura.Click += new System.EventHandler(this.btnImprimirFactura_Click);
             // 
             // tbTotal
             // 
@@ -235,18 +208,50 @@ namespace TPV
             this.lbSeleccionProductos.Size = new System.Drawing.Size(389, 212);
             this.lbSeleccionProductos.TabIndex = 38;
             // 
+            // btnEliminarProducto
+            // 
+            this.btnEliminarProducto.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarProducto.Image = global::TPV.Properties.Resources._1486504830_delete_dustbin_empty_recycle_recycling_remove_trash_81361;
+            this.btnEliminarProducto.Location = new System.Drawing.Point(693, 265);
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(168, 49);
+            this.btnEliminarProducto.TabIndex = 39;
+            this.btnEliminarProducto.Text = "Eliminar producto";
+            this.btnEliminarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarProducto.UseVisualStyleBackColor = false;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
+            // 
+            // btnImprimirFactura
+            // 
+            this.btnImprimirFactura.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnImprimirFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirFactura.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirFactura.Image = global::TPV.Properties.Resources.printer_78349;
+            this.btnImprimirFactura.Location = new System.Drawing.Point(693, 320);
+            this.btnImprimirFactura.Name = "btnImprimirFactura";
+            this.btnImprimirFactura.Size = new System.Drawing.Size(168, 50);
+            this.btnImprimirFactura.TabIndex = 3;
+            this.btnImprimirFactura.Text = "Imprimir factura";
+            this.btnImprimirFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimirFactura.UseVisualStyleBackColor = false;
+            this.btnImprimirFactura.Click += new System.EventHandler(this.btnImprimirFactura_Click);
+            // 
             // FormConsumirProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 464);
+            this.Controls.Add(this.btnEliminarProducto);
             this.Controls.Add(this.lbSeleccionProductos);
             this.Controls.Add(this.gbImportes);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.lbProductos);
             this.Controls.Add(this.btnImprimirFactura);
-            this.Controls.Add(this.btnConsumirProductos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormConsumirProductos";
@@ -259,7 +264,6 @@ namespace TPV
         }
 
         #endregion
-        private System.Windows.Forms.Button btnConsumirProductos;
         private System.Windows.Forms.Button btnImprimirFactura;
         private System.Windows.Forms.ListBox lbProductos;
         private System.Windows.Forms.DataGridView dgvProductos;
@@ -278,5 +282,6 @@ namespace TPV
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Impuestos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Button btnEliminarProducto;
     }
 }

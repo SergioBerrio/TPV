@@ -16,11 +16,36 @@ namespace TPV
     public partial class FormConsumirProductos : Form
     {
         String nombre;
-        
+        double subtotal;
+        int impuestos;
 
         public FormConsumirProductos()
         {
             InitializeComponent();
+        }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            int aux = -1;
+
+            for (int i = 0; i < dgvProductos.Rows.Count - 1; i++)
+            {
+                if (dgvProductos.Rows[i].Cells[1].Value.ToString().Equals(lbSeleccionProductos.SelectedItem.ToString()))
+                {
+                    aux = i;
+                }
+            }
+
+            if (aux > -1)
+            {
+                dgvProductos.Rows[aux].Cells[3].Value = Convert.ToInt32(dgvProductos.Rows[aux].Cells[3].Value) + 1;
+            }
+
+            lbSeleccionProductos.Items.Remove(lbSeleccionProductos.SelectedItem);
+            
+            tbSubtotal.Text = (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + tbSubtotal.Text).ToString() + " €";
+            tbTotal.Text = (Convert.ToDouble(tbTotal.Text.Split(' ')[0]) - (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + Convert.ToDouble(tbImpuestos.Text.Split(' ')[0]))).ToString() + " €";
+            
         }
 
         private void FormConsumirProductos_Load(object sender, EventArgs e)
@@ -47,8 +72,6 @@ namespace TPV
 
             ArrayList myAL = new ArrayList();
 
-            //dgvProductos.ColumnCount = 5;
-
             dgvProductos.Columns[0].Name = "Id";
             dgvProductos.Columns[1].Name = "Nombre";
             dgvProductos.Columns[2].Name = "Precio";
@@ -64,7 +87,7 @@ namespace TPV
             DataSet d2 = new DataSet();
             adapter2.Fill(d2);
 
-            DataGridViewRow rowDGV = (DataGridViewRow)dgvProductos.Rows[0].Clone();
+            //DataGridViewRow rowDGV = (DataGridViewRow)dgvProductos.Rows[0].Clone();
            
             foreach (DataRow row in d.Tables[0].Rows)
             {
@@ -85,8 +108,6 @@ namespace TPV
 
             conexion.Close();
 
-            Console.ReadLine();
-
             lbProductos.SelectedIndex = 0;
         }
 
@@ -105,10 +126,12 @@ namespace TPV
                 // Create a new file     
                 using (StreamWriter sw = File.CreateText(ruta))
                 {
-                    sw.WriteLine("Nuevo archivo creado: {0}", DateTime.Now.ToString());
-                    sw.WriteLine("Author: Mahesh Chand");
-                    sw.WriteLine("Add one more line ");
-                    sw.WriteLine("Add one more line ");
+                    sw.WriteLine("Factura de los productos consumidos");
+                    sw.WriteLine(lbSeleccionProductos.Text);
+                    sw.WriteLine("=======================");
+                    sw.WriteLine("Precio subtotal:" + lblSubtotal.Text + " €");
+                    sw.WriteLine("Porcentaje de impuestos:" + lblImpuestos.Text + " %");
+                    sw.WriteLine("Precio total de la consumición:" + lblTotal.Text + " €");
                 }
 
                 // Open the stream and read it back.    
@@ -148,9 +171,16 @@ namespace TPV
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 subtotal = Convert.ToDouble(row["Precio"]);
-                tbSubtotal.Text = row["Precio"].ToString();
-                Console.WriteLine(row["Precio"]);
 
+                if (tbSubtotal.Text.Equals("€"))
+                {
+                    tbSubtotal.Text = subtotal.ToString() + " €";
+
+                } else
+                {
+                    tbSubtotal.Text = (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + subtotal).ToString() + " €";
+                }
+                
             }
 
 
@@ -164,19 +194,33 @@ namespace TPV
             foreach (DataRow row in d2.Tables[0].Rows)
             {
                 impuestos = Convert.ToInt32(row["Impuestos"]);
-                tbImpuestos.Text = row["Impuestos"].ToString();
-                Console.WriteLine(row["Impuestos"]);
-
+                tbImpuestos.Text = impuestos.ToString() + " %";
             }
 
-            tbTotal.Text = (Convert.ToDouble(tbSubtotal.Text) + Convert.ToDouble(tbImpuestos.Text)).ToString() + " €";
+            if (tbTotal.Text.Equals("€"))
+            {
+                tbTotal.Text = ((Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + Convert.ToDouble(tbImpuestos.Text.Split(' ')[0]))).ToString() + " €";
 
-            Console.WriteLine(lbProductos.SelectedItem);
-        }
+            }
+            else
+            {
+                tbTotal.Text = (Convert.ToDouble(tbTotal.Text.Split(' ')[0]) + (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + Convert.ToDouble(tbImpuestos.Text.Split(' ')[0]))).ToString() + " €";
+            }
 
-        private void btnConsumirProductos_Click(object sender, EventArgs e)
-        {
+            int aux = -1;
 
+            for (int i = 0; i < dgvProductos.Rows.Count-1; i++)
+            {
+                if (dgvProductos.Rows[i].Cells[1].Value.ToString().Equals(lbProductos.SelectedItem.ToString()))
+                {
+                    aux = i;
+                } 
+            }
+
+            if (aux > -1)
+            {
+                dgvProductos.Rows[aux].Cells[3].Value = Convert.ToInt32(dgvProductos.Rows[aux].Cells[3].Value) - 1;
+            }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -185,7 +229,5 @@ namespace TPV
             formUsuario.Show();
             this.Hide();
         }
-
-        
     }
 }

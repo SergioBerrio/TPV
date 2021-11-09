@@ -63,6 +63,16 @@ namespace TPV.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1486504830_delete_dustbin_empty_recycle_recycling_remove_trash_81361 {
+            get {
+                object obj = ResourceManager.GetObject("1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap downarrow_83759 {
             get {
                 object obj = ResourceManager.GetObject("downarrow_83759", resourceCulture);
@@ -73,9 +83,9 @@ namespace TPV.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap istockphoto_1152174623_170667a {
+        internal static System.Drawing.Bitmap iconfinder_trash_4341321_120557 {
             get {
-                object obj = ResourceManager.GetObject("istockphoto-1152174623-170667a", resourceCulture);
+                object obj = ResourceManager.GetObject("iconfinder-trash-4341321_120557", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
