@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aspose.Pdf;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Page = Aspose.Pdf.Page;
 
 namespace TPV
 {
@@ -18,6 +21,9 @@ namespace TPV
         String nombre;
         double subtotal;
         int impuestos;
+        int cantidad;
+        double precio;
+        ArrayList arrayListCantidades = new ArrayList();
 
         public FormConsumirProductos()
         {
@@ -113,6 +119,8 @@ namespace TPV
 
         private void btnImprimirFactura_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Ahora se creará la factura de consumición.", "Factura de TPV", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             string ruta = "C:/DATOS/Factura.txt";
 
             try
@@ -123,15 +131,27 @@ namespace TPV
                     File.Delete(ruta);
                 }
 
+                for (int i = 0; i < dgvProductos.Rows.Count - 1; i++)
+                {
+                    cantidad = Convert.ToInt32(dgvProductos.Rows[i].Cells[3].Value);
+                    precio = Convert.ToDouble(dgvProductos.Rows[i].Cells[2].Value);
+                }
+
+
                 // Create a new file     
                 using (StreamWriter sw = File.CreateText(ruta))
                 {
-                    sw.WriteLine("Factura de los productos consumidos");
-                    sw.WriteLine(lbSeleccionProductos.Text);
-                    sw.WriteLine("=======================");
-                    sw.WriteLine("Precio subtotal:" + lblSubtotal.Text + " €");
-                    sw.WriteLine("Porcentaje de impuestos:" + lblImpuestos.Text + " %");
-                    sw.WriteLine("Precio total de la consumición:" + lblTotal.Text + " €");
+                    sw.WriteLine("==================================================================================");
+                    sw.WriteLine("Unidades                Producto                Precio                     Importe");
+                    sw.WriteLine("==================================================================================");
+                    for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
+                    {
+                        sw.WriteLine(Convert.ToString(cantidad-i) + "                       " + lbSeleccionProductos.Items[i] + "                     " + Convert.ToString(precio) + "                           " + Convert.ToString(cantidad*precio));
+                    }
+                    sw.WriteLine("==================================================================================");
+                    sw.WriteLine("Importe Base: " + tbSubtotal.Text + "        " + "IVA 4%: " + tbImpuestos.Text + "        " + "Total sin IVA:                 " + (tbSubtotal.Text + tbImpuestos.Text));
+                    sw.WriteLine("==================================================================================");
+                    sw.WriteLine("TOTAL EUROS                                                                    " + tbTotal.Text);
                 }
 
                 // Open the stream and read it back.    
@@ -148,6 +168,25 @@ namespace TPV
             {
                 Console.WriteLine(Ex.ToString());
             }
+
+            // Initialize document object
+            //Document factura = new Document();
+
+            // Add page
+            //Page page = factura.Pages.Add();
+
+            // Add text to new page
+            /*page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("[Factura de los productos consumidos]"));
+            for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
+            {
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(Convert.ToString(lbSeleccionProductos.Items[i]) + " - "));
+            }
+            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Precio subtotal: " + tbSubtotal.Text));
+            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Porcentaje de impuestos: " + tbImpuestos.Text));
+            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Precio total de la consumición: " + tbTotal.Text));*/
+
+            // Save PDF 
+            //factura.Save("C:/DATOS/Factura.pdf");
         }
 
         private void elegirProducto(object sender, MouseEventArgs e)
@@ -214,12 +253,24 @@ namespace TPV
                 if (dgvProductos.Rows[i].Cells[1].Value.ToString().Equals(lbProductos.SelectedItem.ToString()))
                 {
                     aux = i;
-                } 
+                }
             }
 
             if (aux > -1)
             {
                 dgvProductos.Rows[aux].Cells[3].Value = Convert.ToInt32(dgvProductos.Rows[aux].Cells[3].Value) - 1;
+            }
+
+            arrayListCantidades.Add(lbProductos.SelectedItem);
+
+            for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
+            {
+
+                Console.WriteLine("Cantidad");
+                Console.WriteLine(arrayListCantidades.IndexOf(lbSeleccionProductos.Items));
+
+                Console.WriteLine(lbSeleccionProductos.Items[i]);
+                Console.WriteLine(cantidad);
             }
         }
 

@@ -55,11 +55,13 @@ namespace TPV
             // 
             // lbProductos
             // 
+            this.lbProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProductos.FormattingEnabled = true;
+            this.lbProductos.ItemHeight = 18;
             this.lbProductos.Location = new System.Drawing.Point(27, 231);
             this.lbProductos.Name = "lbProductos";
             this.lbProductos.ScrollAlwaysVisible = true;
-            this.lbProductos.Size = new System.Drawing.Size(203, 212);
+            this.lbProductos.Size = new System.Drawing.Size(203, 202);
             this.lbProductos.TabIndex = 6;
             this.lbProductos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.elegirProducto);
             // 
@@ -112,9 +114,9 @@ namespace TPV
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(693, 400);
+            this.btnAtras.Location = new System.Drawing.Point(693, 391);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(168, 43);
+            this.btnAtras.Size = new System.Drawing.Size(168, 42);
             this.btnAtras.TabIndex = 33;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
@@ -201,11 +203,13 @@ namespace TPV
             // 
             // lbSeleccionProductos
             // 
+            this.lbSeleccionProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSeleccionProductos.FormattingEnabled = true;
+            this.lbSeleccionProductos.ItemHeight = 18;
             this.lbSeleccionProductos.Location = new System.Drawing.Point(281, 231);
             this.lbSeleccionProductos.Name = "lbSeleccionProductos";
             this.lbSeleccionProductos.ScrollAlwaysVisible = true;
-            this.lbSeleccionProductos.Size = new System.Drawing.Size(389, 212);
+            this.lbSeleccionProductos.Size = new System.Drawing.Size(389, 202);
             this.lbSeleccionProductos.TabIndex = 38;
             // 
             // btnEliminarProducto
@@ -244,7 +248,7 @@ namespace TPV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 464);
+            this.ClientSize = new System.Drawing.Size(888, 455);
             this.Controls.Add(this.btnEliminarProducto);
             this.Controls.Add(this.lbSeleccionProductos);
             this.Controls.Add(this.gbImportes);
