@@ -34,24 +34,54 @@ namespace TPV
         {
             int aux = -1;
 
-            for (int i = 0; i < dgvProductos.Rows.Count - 1; i++)
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+
+            conexion.Open();
+
+            String query = "SELECT Precio FROM Productos WHERE Nombre = '" + lbSeleccionProductos.SelectedItem + "'";
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter(query, conexion);
+
+            DataSet d = new DataSet();
+            adapter.Fill(d);
+
+            foreach (DataRow row in d.Tables[0].Rows)
             {
-                if (dgvProductos.Rows[i].Cells[1].Value.ToString().Equals(lbSeleccionProductos.SelectedItem.ToString()))
+
+                String var1 = (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) - Convert.ToDouble(row["Precio"])).ToString();
+
+                double impuesto = Convert.ToDouble(row["Precio"]) * 0.04;
+                String var2 = (Convert.ToDouble(tbTotal.Text.Split(' ')[0]) - (Convert.ToDouble(row["Precio"]) + impuesto)).ToString();
+
+                tbSubtotal.Text = var1 + " €";
+                tbTotal.Text = var2 + " €";
+            }
+
+
+            if (lbSeleccionProductos.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un producto para eliminar!!", "Listbox de eliminar vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                for (int i = 0; i < dgvProductos.Rows.Count - 1; i++)
                 {
-                    aux = i;
+                    if (dgvProductos.Rows[i].Cells[1].Value.ToString().Equals(lbSeleccionProductos.SelectedItem.ToString()))
+                    {
+                        aux = i;
+                    }
                 }
+
+                if (aux > -1)
+                {
+                    dgvProductos.Rows[aux].Cells[3].Value = Convert.ToInt32(dgvProductos.Rows[aux].Cells[3].Value) + 1;
+                }
+
+                lbSeleccionProductos.Items.Remove(lbSeleccionProductos.SelectedItem);
             }
 
-            if (aux > -1)
-            {
-                dgvProductos.Rows[aux].Cells[3].Value = Convert.ToInt32(dgvProductos.Rows[aux].Cells[3].Value) + 1;
-            }
-
-            lbSeleccionProductos.Items.Remove(lbSeleccionProductos.SelectedItem);
-            
-            tbSubtotal.Text = (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + tbSubtotal.Text).ToString() + " €";
-            tbTotal.Text = (Convert.ToDouble(tbTotal.Text.Split(' ')[0]) - (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + Convert.ToDouble(tbImpuestos.Text.Split(' ')[0]))).ToString() + " €";
-            
+            conexion.Close();
         }
 
         private void FormConsumirProductos_Load(object sender, EventArgs e)
@@ -92,8 +122,6 @@ namespace TPV
 
             DataSet d2 = new DataSet();
             adapter2.Fill(d2);
-
-            //DataGridViewRow rowDGV = (DataGridViewRow)dgvProductos.Rows[0].Clone();
            
             foreach (DataRow row in d.Tables[0].Rows)
             {
@@ -119,55 +147,66 @@ namespace TPV
 
         private void btnImprimirFactura_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Ahora se creará la factura de consumición.", "Factura de TPV", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            string ruta = "C:/DATOS/Factura.txt";
-
-            try
+            
+            if (lbSeleccionProductos.Items.Count == 0)
             {
-                // Check if file already exists. If yes, delete it.     
-                if (File.Exists(ruta))
-                {
-                    File.Delete(ruta);
-                }
+                MessageBox.Show("No puedes hacer una factura vacía!!", "Pedido vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                for (int i = 0; i < dgvProductos.Rows.Count - 1; i++)
-                {
-                    cantidad = Convert.ToInt32(dgvProductos.Rows[i].Cells[3].Value);
-                    precio = Convert.ToDouble(dgvProductos.Rows[i].Cells[2].Value);
-                }
+            } else
+            {
 
+                MessageBox.Show("Creación de la factura de consumición en curso...", "Factura de TPV", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Create a new file     
-                using (StreamWriter sw = File.CreateText(ruta))
+                string ruta = "C:/DATOS/Factura.txt";
+
+                try
                 {
-                    sw.WriteLine("==================================================================================");
-                    sw.WriteLine("Unidades                Producto                Precio                     Importe");
-                    sw.WriteLine("==================================================================================");
-                    for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
+                    // Check if file already exists. If yes, delete it.     
+                    if (File.Exists(ruta))
                     {
-                        sw.WriteLine(Convert.ToString(cantidad-i) + "                       " + lbSeleccionProductos.Items[i] + "                     " + Convert.ToString(precio) + "                           " + Convert.ToString(cantidad*precio));
+                        File.Delete(ruta);
                     }
-                    sw.WriteLine("==================================================================================");
-                    sw.WriteLine("Importe Base: " + tbSubtotal.Text + "        " + "IVA 4%: " + tbImpuestos.Text + "        " + "Total sin IVA:                 " + (tbSubtotal.Text + tbImpuestos.Text));
-                    sw.WriteLine("==================================================================================");
-                    sw.WriteLine("TOTAL EUROS                                                                    " + tbTotal.Text);
-                }
 
-                // Open the stream and read it back.    
-                using (StreamReader sr = File.OpenText(ruta))
-                {
-                    string s = "";
-                    while ((s = sr.ReadLine()) != null)
+                    for (int i = 0; i < dgvProductos.Rows.Count - 1; i++)
                     {
-                        Console.WriteLine(s);
+                        cantidad = Convert.ToInt32(dgvProductos.Rows[i].Cells[3].Value);
+                        precio = Convert.ToDouble(dgvProductos.Rows[i].Cells[2].Value);
                     }
+
+
+                    // Create a new file     
+                    using (StreamWriter sw = File.CreateText(ruta))
+                    {
+                        sw.WriteLine("==================================================================================");
+                        sw.WriteLine("Unidades                Producto                Precio                     Importe");
+                        sw.WriteLine("==================================================================================");
+                        for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
+                        {
+                            sw.WriteLine(Convert.ToString(cantidad - i) + "                       " + lbSeleccionProductos.Items[i] + "                     " + Convert.ToString(precio) + "                           " + Convert.ToString(cantidad * precio));
+                        }
+                        sw.WriteLine("==================================================================================");
+                        sw.WriteLine("Importe Base: " + tbSubtotal.Text + "        " + "IVA 4%: " + tbImpuestos.Text + "        " + "Total sin IVA:                 " + (tbSubtotal.Text + tbImpuestos.Text));
+                        sw.WriteLine("==================================================================================");
+                        sw.WriteLine("TOTAL EUROS                                                                  " + tbTotal.Text);
+                    }
+
+                    // Open the stream and read it back.    
+                    using (StreamReader sr = File.OpenText(ruta))
+                    {
+                        string s = "";
+                        while ((s = sr.ReadLine()) != null)
+                        {
+                            Console.WriteLine(s);
+                        }
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    Console.WriteLine(Ex.ToString());
                 }
             }
-            catch (Exception Ex)
-            {
-                Console.WriteLine(Ex.ToString());
-            }
+                
+            
 
             // Initialize document object
             //Document factura = new Document();
@@ -219,7 +258,19 @@ namespace TPV
                 {
                     tbSubtotal.Text = (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + subtotal).ToString() + " €";
                 }
-                
+
+                if (tbTotal.Text.Equals("€"))
+                {
+                    double impuesto = Convert.ToDouble(row["Precio"]) * 0.04;
+                    tbTotal.Text = (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + impuesto).ToString() + " €";
+
+                }
+                else
+                {
+                    double impuesto = Convert.ToDouble(row["Precio"]) * 0.04;
+                    tbTotal.Text = (Convert.ToDouble(tbTotal.Text.Split(' ')[0]) + (Convert.ToDouble(row["Precio"]) + impuesto)).ToString() + " €";
+                }
+
             }
 
 
@@ -236,15 +287,6 @@ namespace TPV
                 tbImpuestos.Text = impuestos.ToString() + " %";
             }
 
-            if (tbTotal.Text.Equals("€"))
-            {
-                tbTotal.Text = ((Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + Convert.ToDouble(tbImpuestos.Text.Split(' ')[0]))).ToString() + " €";
-
-            }
-            else
-            {
-                tbTotal.Text = (Convert.ToDouble(tbTotal.Text.Split(' ')[0]) + (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + Convert.ToDouble(tbImpuestos.Text.Split(' ')[0]))).ToString() + " €";
-            }
 
             int aux = -1;
 
@@ -259,18 +301,6 @@ namespace TPV
             if (aux > -1)
             {
                 dgvProductos.Rows[aux].Cells[3].Value = Convert.ToInt32(dgvProductos.Rows[aux].Cells[3].Value) - 1;
-            }
-
-            arrayListCantidades.Add(lbProductos.SelectedItem);
-
-            for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
-            {
-
-                Console.WriteLine("Cantidad");
-                Console.WriteLine(arrayListCantidades.IndexOf(lbSeleccionProductos.Items));
-
-                Console.WriteLine(lbSeleccionProductos.Items[i]);
-                Console.WriteLine(cantidad);
             }
         }
 

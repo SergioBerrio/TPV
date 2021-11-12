@@ -51,24 +51,26 @@ namespace TPV
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.Location = new System.Drawing.Point(30, 170);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(191, 29);
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAnadir
             // 
+            this.btnAnadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnadir.Location = new System.Drawing.Point(32, 170);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(176, 29);
             this.btnAnadir.TabIndex = 4;
             this.btnAnadir.Text = "Añadir";
-            this.btnAnadir.UseVisualStyleBackColor = true;
+            this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // tbContrasena
@@ -97,7 +99,7 @@ namespace TPV
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(604, 339);
+            this.btnAtras.Location = new System.Drawing.Point(604, 325);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(112, 29);
             this.btnAtras.TabIndex = 11;
@@ -107,21 +109,24 @@ namespace TPV
             // 
             // lbUsuarios
             // 
+            this.lbUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsuarios.FormattingEnabled = true;
+            this.lbUsuarios.ItemHeight = 18;
             this.lbUsuarios.Location = new System.Drawing.Point(21, 26);
             this.lbUsuarios.Name = "lbUsuarios";
-            this.lbUsuarios.Size = new System.Drawing.Size(146, 342);
+            this.lbUsuarios.Size = new System.Drawing.Size(146, 328);
             this.lbUsuarios.TabIndex = 14;
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(32, 45);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(176, 29);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox1
@@ -202,9 +207,9 @@ namespace TPV
             // 
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(195, 271);
+            this.groupBox3.Location = new System.Drawing.Point(195, 266);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(234, 97);
+            this.groupBox3.Size = new System.Drawing.Size(234, 88);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Eliminar usuario";
@@ -213,7 +218,7 @@ namespace TPV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 383);
+            this.ClientSize = new System.Drawing.Size(734, 369);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

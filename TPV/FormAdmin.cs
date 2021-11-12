@@ -33,6 +33,8 @@ namespace TPV
 
         private void btnCerrarSesión_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Has cerrado sesión", "Cerrar sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
             this.Hide();

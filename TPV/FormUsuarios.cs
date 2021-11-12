@@ -261,14 +261,9 @@ namespace TPV
             {
                 lbUsuarios.Items.Add(row["Usuario"]);
 
-                Console.WriteLine(row["Id"]);
-                Console.WriteLine(row["Usuario"]);
-
             }
 
             conexion.Close();
-
-            Console.ReadLine();
         }
     }
 }

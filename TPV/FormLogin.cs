@@ -35,12 +35,6 @@ namespace TPV
 
             foreach (DataRow row in d.Tables[0].Rows)
             {
-                /*Console.WriteLine("ID: " + row["Id"]);
-                Console.WriteLine("Usuario: " + row["Usuario"]);
-                Console.WriteLine("Contraseña: " + row["Contrasena"]);
-                Console.WriteLine("Es Admin: " + row["Admin"]);
-                Console.WriteLine("");*/
-
 
                 if (tbUsuario.Text.Equals(row["Usuario"]) && tbContrasena.Text.Equals(row["Contrasena"]))
                 {
@@ -48,12 +42,17 @@ namespace TPV
 
                     if ((Int32)row["Admin"] == 1){
 
+                        //MessageBox.Show("Has iniciado sesión", "Iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         FormAdmin admin = new FormAdmin();
                         admin.Show();
                         this.Hide();
 
                     } else
                     {
+
+                        //MessageBox.Show("Has iniciado sesión", "Iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         FormUsuario usuario = new FormUsuario(tbUsuario.Text);
                         usuario.Show();
                         this.Hide();
@@ -62,7 +61,7 @@ namespace TPV
             }
 
             if(correcto == 0){
-                MessageBox.Show("Usuario incorrecto, introduce de nuevo los datos!!");
+                MessageBox.Show("Usuario incorrecto, introduce de nuevo los datos!!", "Usuario incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             conexion.Close();

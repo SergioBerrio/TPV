@@ -51,10 +51,12 @@ namespace TPV
             // 
             // lbProductos
             // 
+            this.lbProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProductos.FormattingEnabled = true;
+            this.lbProductos.ItemHeight = 18;
             this.lbProductos.Location = new System.Drawing.Point(21, 29);
             this.lbProductos.Name = "lbProductos";
-            this.lbProductos.Size = new System.Drawing.Size(146, 342);
+            this.lbProductos.Size = new System.Drawing.Size(146, 328);
             this.lbProductos.TabIndex = 1;
             // 
             // groupBox3
@@ -63,20 +65,21 @@ namespace TPV
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(192, 274);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(234, 93);
+            this.groupBox3.Size = new System.Drawing.Size(234, 97);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Eliminar producto";
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(32, 43);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(176, 29);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox2
@@ -131,13 +134,14 @@ namespace TPV
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.Location = new System.Drawing.Point(30, 170);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(191, 29);
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // groupBox1
@@ -168,13 +172,14 @@ namespace TPV
             // 
             // btnAnadir
             // 
+            this.btnAnadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnadir.Location = new System.Drawing.Point(32, 170);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(176, 29);
             this.btnAnadir.TabIndex = 4;
             this.btnAnadir.Text = "Añadir";
-            this.btnAnadir.UseVisualStyleBackColor = true;
+            this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
             // tbPrecio

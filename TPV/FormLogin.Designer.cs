@@ -51,9 +51,9 @@ namespace TPV
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(118, 250);
+            this.btnLogin.Location = new System.Drawing.Point(118, 239);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(195, 36);
+            this.btnLogin.Size = new System.Drawing.Size(195, 47);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Iniciar sesión";
             this.btnLogin.UseVisualStyleBackColor = true;
