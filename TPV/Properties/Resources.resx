@@ -121,16 +121,25 @@
   <data name="iconfinder-trash-4341321_120557" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder-trash-4341321_120557.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="uparrow_83726" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\uparrow_83726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="printer_78349" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printer_78349.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="downarrow_83759" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\downarrow_83759.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="emblemnew_93501" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emblemnew_93501.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_icon-icons.com_66118" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_icon-icons.com_66118.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uparrow_83726" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uparrow_83726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seo-social-web-network-internet_262_icon-icons.com_61518" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seo-social-web-network-internet_262_icon-icons.com_61518.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

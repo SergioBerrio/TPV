@@ -52,9 +52,9 @@ namespace TPV
             // 
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(196, 213);
+            this.groupBox3.Location = new System.Drawing.Point(196, 257);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(272, 104);
+            this.groupBox3.Size = new System.Drawing.Size(272, 116);
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Eliminar reserva";
@@ -64,11 +64,14 @@ namespace TPV
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(19, 49);
+            this.btnEliminar.Image = global::TPV.Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
+            this.btnEliminar.Location = new System.Drawing.Point(47, 42);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(230, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(186, 49);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -79,7 +82,7 @@ namespace TPV
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(490, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(267, 157);
+            this.groupBox2.Size = new System.Drawing.Size(267, 183);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modificar reserva";
@@ -100,11 +103,14 @@ namespace TPV
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(17, 103);
+            this.btnModificar.Image = global::TPV.Properties.Resources.edit_icon_icons_com_66118;
+            this.btnModificar.Location = new System.Drawing.Point(39, 103);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(234, 29);
+            this.btnModificar.Size = new System.Drawing.Size(190, 54);
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -115,7 +121,7 @@ namespace TPV
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(196, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(272, 157);
+            this.groupBox1.Size = new System.Drawing.Size(272, 183);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Añadir reserva";
@@ -124,11 +130,14 @@ namespace TPV
             // 
             this.btnAnadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnadir.Location = new System.Drawing.Point(19, 103);
+            this.btnAnadir.Image = global::TPV.Properties.Resources.emblemnew_93501;
+            this.btnAnadir.Location = new System.Drawing.Point(47, 103);
             this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(230, 29);
+            this.btnAnadir.Size = new System.Drawing.Size(186, 54);
             this.btnAnadir.TabIndex = 4;
             this.btnAnadir.Text = "Añadir";
+            this.btnAnadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAnadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAnadir.UseVisualStyleBackColor = false;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
@@ -146,7 +155,7 @@ namespace TPV
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(658, 286);
+            this.btnAtras.Location = new System.Drawing.Point(658, 342);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(99, 31);
             this.btnAtras.TabIndex = 32;
@@ -161,7 +170,7 @@ namespace TPV
             this.lbReservas.ItemHeight = 18;
             this.lbReservas.Location = new System.Drawing.Point(22, 27);
             this.lbReservas.Name = "lbReservas";
-            this.lbReservas.Size = new System.Drawing.Size(146, 274);
+            this.lbReservas.Size = new System.Drawing.Size(146, 346);
             this.lbReservas.TabIndex = 33;
             // 
             // cbTipo
@@ -181,9 +190,9 @@ namespace TPV
             // 
             this.groupBox4.Controls.Add(this.cbTipo);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(486, 213);
+            this.groupBox4.Location = new System.Drawing.Point(490, 257);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(153, 104);
+            this.groupBox4.Size = new System.Drawing.Size(153, 116);
             this.groupBox4.TabIndex = 38;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tipo de reserva";
@@ -192,7 +201,7 @@ namespace TPV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 338);
+            this.ClientSize = new System.Drawing.Size(775, 394);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

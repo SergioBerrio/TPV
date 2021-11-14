@@ -83,6 +83,26 @@ namespace TPV.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_icon_icons_com_66118 {
+            get {
+                object obj = ResourceManager.GetObject("edit_icon-icons.com_66118", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emblemnew_93501 {
+            get {
+                object obj = ResourceManager.GetObject("emblemnew_93501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_trash_4341321_120557 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder-trash-4341321_120557", resourceCulture);
@@ -96,6 +116,16 @@ namespace TPV.Properties {
         internal static System.Drawing.Bitmap printer_78349 {
             get {
                 object obj = ResourceManager.GetObject("printer_78349", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seo_social_web_network_internet_262_icon_icons_com_61518 {
+            get {
+                object obj = ResourceManager.GetObject("seo-social-web-network-internet_262_icon-icons.com_61518", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

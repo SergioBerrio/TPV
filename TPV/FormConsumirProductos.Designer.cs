@@ -257,7 +257,6 @@ namespace TPV
             this.Controls.Add(this.lbProductos);
             this.Controls.Add(this.btnImprimirFactura);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormConsumirProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormConsumirProductos";
             this.Load += new System.EventHandler(this.FormConsumirProductos_Load);

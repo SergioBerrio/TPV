@@ -159,6 +159,9 @@
     <Content Include="Database1.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\seo-social-web-network-internet_262_icon-icons.com_61518.ico" />
+    <None Include="Resources\edit_icon-icons.com_66118.ico" />
+    <None Include="Resources\emblemnew_93501.ico" />
     <None Include="Resources\1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361.ico" />
     <None Include="Resources\iconfinder-trash-4341321_120557.ico" />
     <None Include="Resources\printer_78349.ico" />
