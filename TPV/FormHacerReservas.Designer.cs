@@ -33,6 +33,7 @@ namespace TPV
             this.gbEliminar = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.gbModificar = new System.Windows.Forms.GroupBox();
+            this.mcModificar = new System.Windows.Forms.MonthCalendar();
             this.btnModificar = new System.Windows.Forms.Button();
             this.gbAnadir = new System.Windows.Forms.GroupBox();
             this.mcInsertar = new System.Windows.Forms.MonthCalendar();
@@ -41,7 +42,6 @@ namespace TPV
             this.btnAnadir = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.lbReservas = new System.Windows.Forms.ListBox();
-            this.mcModificar = new System.Windows.Forms.MonthCalendar();
             this.gpReservas = new System.Windows.Forms.GroupBox();
             this.gbEliminar.SuspendLayout();
             this.gbModificar.SuspendLayout();
@@ -89,6 +89,13 @@ namespace TPV
             this.gbModificar.TabStop = false;
             this.gbModificar.Text = "Modificar reserva";
             // 
+            // mcModificar
+            // 
+            this.mcModificar.Location = new System.Drawing.Point(23, 42);
+            this.mcModificar.Name = "mcModificar";
+            this.mcModificar.TabIndex = 40;
+            this.mcModificar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mcModificar_DateChanged);
+            // 
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -123,6 +130,7 @@ namespace TPV
             this.mcInsertar.Location = new System.Drawing.Point(33, 36);
             this.mcInsertar.Name = "mcInsertar";
             this.mcInsertar.TabIndex = 39;
+            this.mcInsertar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mcInsertar_DateChanged);
             // 
             // gbTipoReserva
             // 
@@ -185,12 +193,6 @@ namespace TPV
             this.lbReservas.ScrollAlwaysVisible = true;
             this.lbReservas.Size = new System.Drawing.Size(109, 166);
             this.lbReservas.TabIndex = 33;
-            // 
-            // mcModificar
-            // 
-            this.mcModificar.Location = new System.Drawing.Point(23, 42);
-            this.mcModificar.Name = "mcModificar";
-            this.mcModificar.TabIndex = 40;
             // 
             // gpReservas
             // 

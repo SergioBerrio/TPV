@@ -23,10 +23,19 @@ namespace TPV
             this.nombreUsuarioLogeado = nombre;
         }
 
+        private void mcInsertar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateTime fechaMin = DateTime.Now;
+
+            if (fechaMin >= mcInsertar.SelectionRange.Start)
+            {
+                MessageBox.Show("No se permite elegir una fecha anterior a hoy!!", "Fecha incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -55,9 +64,19 @@ namespace TPV
             MessageBox.Show("Has añadido la reserva en la fecha: " + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy"), "Nueva reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void mcModificar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateTime fechaMin = DateTime.Now;
+
+            if (fechaMin >= mcInsertar.SelectionRange.Start)
+            {
+                MessageBox.Show("No se permite elegir una fecha anterior a hoy!!", "Fecha incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -88,7 +107,7 @@ namespace TPV
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -121,7 +140,7 @@ namespace TPV
         {
             cbTipo.SelectedItem = "Comida";
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 

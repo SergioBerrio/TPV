@@ -59,7 +59,7 @@ namespace TPV
             this.lbProductos.Location = new System.Drawing.Point(16, 64);
             this.lbProductos.Name = "lbProductos";
             this.lbProductos.ScrollAlwaysVisible = true;
-            this.lbProductos.Size = new System.Drawing.Size(104, 292);
+            this.lbProductos.Size = new System.Drawing.Size(118, 292);
             this.lbProductos.TabIndex = 1;
             // 
             // groupBox3
@@ -237,7 +237,7 @@ namespace TPV
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(23, 30);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(138, 380);
+            this.groupBox4.Size = new System.Drawing.Size(152, 380);
             this.groupBox4.TabIndex = 36;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lista de productos";

@@ -38,7 +38,7 @@ namespace TPV
             // 
             // btnAlmacen
             // 
-            this.btnAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlmacen.Location = new System.Drawing.Point(38, 121);
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.Size = new System.Drawing.Size(204, 147);
@@ -49,7 +49,7 @@ namespace TPV
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.Location = new System.Drawing.Point(287, 121);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(204, 147);
@@ -70,13 +70,15 @@ namespace TPV
             // 
             // btnCerrarSesión
             // 
-            this.btnCerrarSesión.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesión.BackColor = System.Drawing.Color.Maroon;
+            this.btnCerrarSesión.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesión.ForeColor = System.Drawing.Color.White;
             this.btnCerrarSesión.Location = new System.Drawing.Point(172, 302);
             this.btnCerrarSesión.Name = "btnCerrarSesión";
             this.btnCerrarSesión.Size = new System.Drawing.Size(184, 57);
             this.btnCerrarSesión.TabIndex = 9;
             this.btnCerrarSesión.Text = "Cerrar sesión";
-            this.btnCerrarSesión.UseVisualStyleBackColor = true;
+            this.btnCerrarSesión.UseVisualStyleBackColor = false;
             this.btnCerrarSesión.Click += new System.EventHandler(this.btnCerrarSesión_Click);
             // 
             // FormAdmin

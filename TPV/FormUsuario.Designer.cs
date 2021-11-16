@@ -48,7 +48,7 @@ namespace TPV
             // 
             // btnConsumirProductos
             // 
-            this.btnConsumirProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsumirProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsumirProductos.Location = new System.Drawing.Point(24, 114);
             this.btnConsumirProductos.Name = "btnConsumirProductos";
             this.btnConsumirProductos.Size = new System.Drawing.Size(204, 147);
@@ -59,7 +59,7 @@ namespace TPV
             // 
             // btnHacerReservas
             // 
-            this.btnHacerReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHacerReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHacerReservas.Location = new System.Drawing.Point(299, 114);
             this.btnHacerReservas.Name = "btnHacerReservas";
             this.btnHacerReservas.Size = new System.Drawing.Size(204, 147);
@@ -70,13 +70,15 @@ namespace TPV
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.Maroon;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.btnCerrarSesion.Location = new System.Drawing.Point(176, 293);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(184, 57);
             this.btnCerrarSesion.TabIndex = 8;
             this.btnCerrarSesion.Text = "Cerrar sesión";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormUsuario
