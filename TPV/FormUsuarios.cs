@@ -22,7 +22,7 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -52,15 +52,11 @@ namespace TPV
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 lbUsuarios.Items.Add(row["Usuario"]);
-
-                Console.WriteLine(row["Id"]);
-                Console.WriteLine(row["Usuario"]);
-
             }
 
             conexion.Close();
 
-            Console.ReadLine();
+            MessageBox.Show("Has añadido al usuario: " + tbUsuario.Text, "Añadir usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             tbUsuario.Text = "Introduce el usuario";
             tbUsuario.ForeColor = Color.Silver;
@@ -70,7 +66,7 @@ namespace TPV
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -102,15 +98,11 @@ namespace TPV
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 lbUsuarios.Items.Add(row["Usuario"]);
-
-                Console.WriteLine(row["Id"]);
-                Console.WriteLine(row["Usuario"]);
-
             }
 
             conexion.Close();
 
-            Console.ReadLine();
+            MessageBox.Show("Has modificado al usuario: " + tbUsuarioModificar.Text, "Modificar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             tbUsuarioModificar.Text = "Introduce el usuario";
             tbUsuarioModificar.ForeColor = Color.Silver;
@@ -120,7 +112,7 @@ namespace TPV
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -152,15 +144,11 @@ namespace TPV
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 lbUsuarios.Items.Add(row["Usuario"]);
-
-                Console.WriteLine(row["Id"]);
-                Console.WriteLine(row["Usuario"]);
-
             }
 
             conexion.Close();
 
-            Console.ReadLine();
+            MessageBox.Show("Has eliminado al usuario: " + tbUsuarioModificar.Text, "Eliminar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -246,7 +234,7 @@ namespace TPV
 
         private void cargarForm(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 

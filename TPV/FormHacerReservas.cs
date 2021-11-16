@@ -25,96 +25,70 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            String regexp = "(0[1-9]|1[0-2])/(0[1-9]|[1-2][0-9]|3[0-1])/[0-9]{4}-(2[0-3]|[01][0-9]):[0-5][0-9]";
-            Match m = Regex.Match(tbFecha.Text, regexp);
 
-            if (m.Success)
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+
+            conexion.Open();
+
+            String query = "INSERT INTO Reservas (Fecha, id_usuarioLogeado, Tipo) VALUES ( '" + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy") + "', " + id + ", '" + cbTipo.Text + "')";
+
+            OleDbCommand comando = new OleDbCommand(query, conexion);
+            comando.ExecuteNonQuery();
+
+            lbReservas.Items.Clear();
+
+            String query2 = "SELECT * FROM Reservas WHERE id_usuarioLogeado = " + id;
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
+
+            DataSet d = new DataSet();
+            adapter.Fill(d);
+
+            foreach (DataRow row in d.Tables[0].Rows)
             {
-                OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+                lbReservas.Items.Add(row["Fecha"]);
 
-                conexion.Open();
-
-                String query = "INSERT INTO Reservas (Fecha, id_usuarioLogeado, Tipo) VALUES ( '" + tbFecha.Text + "', " + id + ", '" + cbTipo.Text + "')";
-
-                OleDbCommand comando = new OleDbCommand(query, conexion);
-                comando.ExecuteNonQuery();
-
-                lbReservas.Items.Clear();
-
-                String query2 = "SELECT * FROM Reservas WHERE id_usuarioLogeado = " + id;
-
-                OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
-
-                DataSet d = new DataSet();
-                adapter.Fill(d);
-
-                foreach (DataRow row in d.Tables[0].Rows)
-                {
-                    lbReservas.Items.Add(row["Fecha"]);
-
-                }
-
-                conexion.Close();
-
-                Console.ReadLine();
-
-                tbFecha.Text = "Introduce la fecha (formato dd/mm/aaaa-hora)";
-                tbFecha.ForeColor = Color.Silver;
-
-            } else {
-
-                MessageBox.Show("Fecha introducida incorrecta, introduce una fecha con el formato correcto!! (formato dd/mm/aaaa-hora)");
             }
+
+            conexion.Close();
+
+            MessageBox.Show("Has añadido la reserva en la fecha: " + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy"), "Nueva reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
-            String regexp = "(0[1-9]|1[0-2])/(0[1-9]|[1-2][0-9]|3[0-1])/[0-9]{4}-(2[0-3]|[01][0-9]):[0-5][0-9]";
-            Match m = Regex.Match(tbFechaModificar.Text, regexp);
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
-            if (m.Success)
+            conexion.Open();
+
+            String query = "UPDATE Reservas SET Fecha = '" + mcModificar.SelectionRange.Start.ToString("dd/MM/yyyy") + "', Tipo = '" + cbTipo.Text + "' WHERE Fecha = '" + lbReservas.SelectedItem + "'";
+
+            OleDbCommand comando = new OleDbCommand(query, conexion);
+            comando.ExecuteNonQuery();
+
+            lbReservas.Items.Clear();
+
+            String query2 = "SELECT * FROM Reservas WHERE id_usuarioLogeado = " + id;
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
+
+            DataSet d = new DataSet();
+            adapter.Fill(d);
+
+            foreach (DataRow row in d.Tables[0].Rows)
             {
-                OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+                lbReservas.Items.Add(row["Fecha"]);
 
-                conexion.Open();
-
-                String query = "UPDATE Reservas SET Fecha = '" + tbFechaModificar.Text + "', Tipo = '" + cbTipo.Text + "' WHERE Fecha = '" + lbReservas.SelectedItem + "'";
-
-                OleDbCommand comando = new OleDbCommand(query, conexion);
-                comando.ExecuteNonQuery();
-
-                lbReservas.Items.Clear();
-
-                String query2 = "SELECT * FROM Reservas WHERE id_usuarioLogeado = " + id;
-
-                OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
-
-                DataSet d = new DataSet();
-                adapter.Fill(d);
-
-                foreach (DataRow row in d.Tables[0].Rows)
-                {
-                    lbReservas.Items.Add(row["Fecha"]);
-
-                }
-
-                conexion.Close();
-
-                Console.ReadLine();
-
-                tbFechaModificar.Text = "Introduce la fecha (formato dd/mm/aaaa-hora)";
-                tbFechaModificar.ForeColor = Color.Silver;
-
-            } else
-            {
-                MessageBox.Show("Fecha introducida incorrecta, introduce una fecha con el formato correcto!! (formato dd/mm/aaaa-hora)");
             }
+
+            conexion.Close();
+
+            MessageBox.Show("Has modificado la reserva en la fecha: " + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy"), "Modificar reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -140,53 +114,14 @@ namespace TPV
 
             conexion.Close();
 
-            Console.ReadLine();
-
-            tbFechaModificar.Text = "Introduce la fecha (formato dd/mm/aaaa-hora)";
-            tbFechaModificar.ForeColor = Color.Silver;
-        }
-
-        private void cambiarTextoFecha(object sender, EventArgs e)
-        {
-            if (tbFecha.Text == "Introduce la fecha (formato dd/mm/aaaa-hora)")
-            {
-                tbFecha.Text = "";
-                tbFecha.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoFechaSalir(object sender, EventArgs e)
-        {
-            if (tbFecha.Text == "")
-            {
-                tbFecha.Text = "Introduce la fecha (formato dd/mm/aaaa-hora)";
-                tbFecha.ForeColor = Color.Silver;
-            }
-        }
-
-        private void cambiarTextoFechaModificar(object sender, EventArgs e)
-        {
-            if (tbFechaModificar.Text == "Introduce la fecha (formato dd/mm/aaaa-hora)")
-            {
-                tbFechaModificar.Text = "";
-                tbFechaModificar.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoFechaModificarSalir(object sender, EventArgs e)
-        {
-            if (tbFechaModificar.Text == "")
-            {
-                tbFechaModificar.Text = "Introduce la fecha (formato dd/mm/aaaa-hora)";
-                tbFechaModificar.ForeColor = Color.Silver;
-            }
+            MessageBox.Show("Has eliminado la reserva en la fecha: " + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy"), "Eliminar reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void FormHacerReservas_Load(object sender, EventArgs e)
         {
             cbTipo.SelectedItem = "Comida";
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -220,8 +155,6 @@ namespace TPV
             }
 
             conexion.Close();
-
-            Console.ReadLine();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -230,6 +163,5 @@ namespace TPV
             formUsuario.Show();
             this.Hide();
         }
-
     }
 }

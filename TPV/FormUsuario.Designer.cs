@@ -71,7 +71,7 @@ namespace TPV
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(174, 294);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(176, 293);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(184, 57);
             this.btnCerrarSesion.TabIndex = 8;
@@ -91,7 +91,7 @@ namespace TPV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormUsuario";
+            this.Text = "Pandel de Usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
