@@ -35,7 +35,7 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -61,7 +61,7 @@ namespace TPV
 
             conexion.Close();
 
-            MessageBox.Show("Has añadido la reserva en la fecha: " + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy"), "Nueva reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Has reservado en la fecha: " + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy") + " y de tipo " + cbTipo.Text, "Nueva reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void mcModificar_DateChanged(object sender, DateRangeEventArgs e)
@@ -76,7 +76,7 @@ namespace TPV
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -102,12 +102,12 @@ namespace TPV
 
             conexion.Close();
 
-            MessageBox.Show("Has modificado la reserva en la fecha: " + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy"), "Modificar reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Has modificado la reserva a la fecha: " + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy") + " y de tipo " + cbTipoModificar.Text, "Modificar reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -141,7 +141,7 @@ namespace TPV
             cbTipo.SelectedItem = "Comida";
             cbTipoModificar.SelectedItem = "Comida";
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 

@@ -23,7 +23,7 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -57,17 +57,12 @@ namespace TPV
 
             conexion.Close();
 
-            MessageBox.Show("Has añadido al usuario: " + tbUsuario.Text, "Añadir usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            tbUsuario.Text = "Introduce el usuario";
-            tbUsuario.ForeColor = Color.Silver;
-            tbContrasena.Text = "Introduce la contraseña";
-            tbContrasena.ForeColor = Color.Silver;
+            MessageBox.Show("Nuevo usuario: " + "\nNombre: " + tbUsuario.Text + " \nContraseña: " + tbContrasena.Text, "Añadir usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -103,17 +98,12 @@ namespace TPV
 
             conexion.Close();
 
-            MessageBox.Show("Has modificado al usuario: " + tbUsuarioModificar.Text, "Modificar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            tbUsuarioModificar.Text = "Introduce el usuario";
-            tbUsuarioModificar.ForeColor = Color.Silver;
-            tbContrasenaModificar.Text = "Introduce la contraseña";
-            tbContrasenaModificar.ForeColor = Color.Silver;
+            MessageBox.Show("Uaurio modificado: " + "\nNombre: " + tbUsuario.Text + " \nContraseña: " + tbContrasena.Text, "Modificar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -149,19 +139,12 @@ namespace TPV
 
             conexion.Close();
 
-            MessageBox.Show("Has eliminado al usuario: " + tbUsuarioModificar.Text, "Eliminar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            FormAdmin formAdmin = new FormAdmin();
-            formAdmin.Show();
-            this.Hide();
+            MessageBox.Show("usuario eliminado: " + "\nNombre: " + tbUsuario.Text + " \nContraseña: " + tbContrasena.Text, "Eliminar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void cargarForm(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -175,12 +158,16 @@ namespace TPV
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 lbUsuarios.Items.Add(row["Usuario"]);
-
             }
 
             conexion.Close();
+        }
 
-            conexion.Close();
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            FormAdmin formAdmin = new FormAdmin();
+            formAdmin.Show();
+            this.Hide();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace TPV
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -42,7 +42,7 @@ namespace TPV
 
                     if ((Int32)row["Admin"] == 1){
 
-                        //MessageBox.Show("Has iniciado sesión", "Iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Has iniciado sesión", "Iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         FormAdmin admin = new FormAdmin();
                         admin.Show();
@@ -51,7 +51,7 @@ namespace TPV
                     } else
                     {
 
-                        //MessageBox.Show("Has iniciado sesión", "Iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Has iniciado sesión", "Iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         FormUsuario usuario = new FormUsuario(tbUsuario.Text);
                         usuario.Show();
@@ -65,8 +65,6 @@ namespace TPV
             }
 
             conexion.Close();
-
-            Console.ReadLine();
         }
     }
 }

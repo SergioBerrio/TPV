@@ -30,7 +30,7 @@ namespace TPV
         {
             int aux = -1;
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -82,7 +82,7 @@ namespace TPV
 
         private void FormConsumirProductos_Load(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -151,12 +151,6 @@ namespace TPV
                     if (File.Exists(ruta))
                     {
                         File.Delete(ruta);
-                    }
-
-                    for (int i = 0; i < dgvProductos.Rows.Count - 1; i++)
-                    {
-                        //cantidad = Convert.ToInt32(dgvProductos.Rows[i].Cells[3].Value);
-                        //precio = Convert.ToDouble(dgvProductos.Rows[i].Cells[2].Value);
                     }
 
                     // Create a new file     
@@ -242,7 +236,7 @@ namespace TPV
             double subtotal;
             int impuestos;
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 

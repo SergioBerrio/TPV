@@ -20,7 +20,7 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -45,19 +45,12 @@ namespace TPV
 
             conexion.Close();
 
-            Console.ReadLine();
-
-            tbProducto.Text = "Introduce el producto";
-            tbProducto.ForeColor = Color.Silver;
-            tbPrecio.Text = "Introduce el precio";
-            tbPrecio.ForeColor = Color.Silver;
-            tbCantidad.Text = "Introduce la cantidad";
-            tbCantidad.ForeColor = Color.Silver;
+            MessageBox.Show("Producto añadido: " + "\nProducto: " + tbProducto.Text + " \nPrecio: " + tbPrecio.Text + " \n Cantidad" + tbCantidad.Text, "Añadir producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -78,27 +71,16 @@ namespace TPV
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 lbProductos.Items.Add(row["Usuario"]);
-
-                Console.WriteLine(row["Id"]);
-                Console.WriteLine(row["Usuario"]);
-
             }
 
             conexion.Close();
 
-            Console.ReadLine();
-
-            tbProductoModificar.Text = "Introduce el producto";
-            tbProductoModificar.ForeColor = Color.Silver;
-            tbPrecioModificar.Text = "Introduce el precio";
-            tbPrecioModificar.ForeColor = Color.Silver;
-            tbCantidadModificar.Text = "Introduce la cantidad";
-            tbCantidadModificar.ForeColor = Color.Silver;
+            MessageBox.Show("Producto modificado: " + "\nProducto: " + tbProducto.Text + " \nPrecio: " + tbPrecio.Text + " \n Cantidad" + tbCantidad.Text, "Modificar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -120,19 +102,17 @@ namespace TPV
             {
                 lbProductos.Items.Add(row["Nombre"]);
 
-                Console.WriteLine(row["Nombre"]);
-
             }
 
             conexion.Close();
 
-            Console.ReadLine();
+            MessageBox.Show("Producto eliminado: " + tbProducto.Text, "Eliminar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void FormAlmacen_Load(object sender, EventArgs e)
         {
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -146,14 +126,9 @@ namespace TPV
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 lbProductos.Items.Add(row["Nombre"]);
-
-                Console.WriteLine(row["Nombre"]);
-
             }
 
             conexion.Close();
-
-            Console.ReadLine();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
