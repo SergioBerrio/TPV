@@ -159,6 +159,12 @@
     <Content Include="Database1.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\cutlery_114858.ico" />
+    <None Include="Resources\cocktail_bar_icon_150223.ico" />
+    <None Include="Resources\warehouse_116463.ico" />
+    <None Include="Resources\round-account-button-with-user-inside_icon-icons.com_72596.ico" />
+    <None Include="Resources\81591.png" />
+    <None Include="Resources\arrow_back_left_icon_123728.ico" />
     <None Include="Resources\seo-social-web-network-internet_262_icon-icons.com_61518.ico" />
     <None Include="Resources\edit_icon-icons.com_66118.ico" />
     <None Include="Resources\emblemnew_93501.ico" />

@@ -19,10 +19,6 @@ namespace TPV
     public partial class FormConsumirProductos : Form
     {
         String nombre;
-        double subtotal;
-        int impuestos;
-        int cantidad;
-        double precio;
         ArrayList arrayListCantidades = new ArrayList();
 
         public FormConsumirProductos()
@@ -34,7 +30,7 @@ namespace TPV
         {
             int aux = -1;
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -86,7 +82,7 @@ namespace TPV
 
         private void FormConsumirProductos_Load(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -107,16 +103,6 @@ namespace TPV
             dgvProductos.Refresh();
 
             ArrayList myAL = new ArrayList();
-
-            dgvProductos.Columns[0].Name = "Id";
-            dgvProductos.Columns[1].Name = "Nombre";
-            dgvProductos.Columns[2].Name = "Precio";
-            dgvProductos.Columns[3].Name = "Cantidad";
-            dgvProductos.Columns[4].Name = "Impuestos";
-            dgvProductos.Columns[5].Name = "Total";
-
-            conexion.Close();
-            conexion.Open();
 
             OleDbDataAdapter adapter2 = new OleDbDataAdapter("SELECT * FROM Productos", conexion);
 
@@ -169,8 +155,8 @@ namespace TPV
 
                     for (int i = 0; i < dgvProductos.Rows.Count - 1; i++)
                     {
-                        cantidad = Convert.ToInt32(dgvProductos.Rows[i].Cells[3].Value);
-                        precio = Convert.ToDouble(dgvProductos.Rows[i].Cells[2].Value);
+                        //cantidad = Convert.ToInt32(dgvProductos.Rows[i].Cells[3].Value);
+                        //precio = Convert.ToDouble(dgvProductos.Rows[i].Cells[2].Value);
                     }
 
                     // Create a new file     
@@ -256,7 +242,7 @@ namespace TPV
             double subtotal;
             int impuestos;
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 

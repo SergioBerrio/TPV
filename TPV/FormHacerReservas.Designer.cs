@@ -33,6 +33,8 @@ namespace TPV
             this.gbEliminar = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.gbModificar = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbTipoModificar = new System.Windows.Forms.ComboBox();
             this.mcModificar = new System.Windows.Forms.MonthCalendar();
             this.btnModificar = new System.Windows.Forms.Button();
             this.gbAnadir = new System.Windows.Forms.GroupBox();
@@ -45,6 +47,7 @@ namespace TPV
             this.gpReservas = new System.Windows.Forms.GroupBox();
             this.gbEliminar.SuspendLayout();
             this.gbModificar.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.gbAnadir.SuspendLayout();
             this.gbTipoReserva.SuspendLayout();
             this.gpReservas.SuspendLayout();
@@ -54,9 +57,9 @@ namespace TPV
             // 
             this.gbEliminar.Controls.Add(this.btnEliminar);
             this.gbEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbEliminar.Location = new System.Drawing.Point(496, 275);
+            this.gbEliminar.Location = new System.Drawing.Point(495, 275);
             this.gbEliminar.Name = "gbEliminar";
-            this.gbEliminar.Size = new System.Drawing.Size(267, 116);
+            this.gbEliminar.Size = new System.Drawing.Size(236, 116);
             this.gbEliminar.TabIndex = 36;
             this.gbEliminar.TabStop = false;
             this.gbEliminar.Text = "Eliminar reserva";
@@ -67,7 +70,7 @@ namespace TPV
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Image = global::TPV.Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
-            this.btnEliminar.Location = new System.Drawing.Point(51, 42);
+            this.btnEliminar.Location = new System.Drawing.Point(23, 42);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(172, 49);
             this.btnEliminar.TabIndex = 10;
@@ -79,6 +82,7 @@ namespace TPV
             // 
             // gbModificar
             // 
+            this.gbModificar.Controls.Add(this.groupBox1);
             this.gbModificar.Controls.Add(this.mcModificar);
             this.gbModificar.Controls.Add(this.btnModificar);
             this.gbModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,6 +92,30 @@ namespace TPV
             this.gbModificar.TabIndex = 35;
             this.gbModificar.TabStop = false;
             this.gbModificar.Text = "Modificar reserva";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbTipoModificar);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(239, 42);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(192, 80);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo de reserva";
+            // 
+            // cbTipoModificar
+            // 
+            this.cbTipoModificar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoModificar.FormattingEnabled = true;
+            this.cbTipoModificar.Items.AddRange(new object[] {
+            "Comida",
+            "Cena"});
+            this.cbTipoModificar.Location = new System.Drawing.Point(21, 41);
+            this.cbTipoModificar.Name = "cbTipoModificar";
+            this.cbTipoModificar.Size = new System.Drawing.Size(147, 21);
+            this.cbTipoModificar.TabIndex = 37;
             // 
             // mcModificar
             // 
@@ -102,7 +130,7 @@ namespace TPV
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Image = global::TPV.Properties.Resources.edit_icon_icons_com_66118;
-            this.btnModificar.Location = new System.Drawing.Point(238, 42);
+            this.btnModificar.Location = new System.Drawing.Point(239, 156);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(192, 48);
             this.btnModificar.TabIndex = 8;
@@ -120,7 +148,7 @@ namespace TPV
             this.gbAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAnadir.Location = new System.Drawing.Point(196, 27);
             this.gbAnadir.Name = "gbAnadir";
-            this.gbAnadir.Size = new System.Drawing.Size(567, 220);
+            this.gbAnadir.Size = new System.Drawing.Size(544, 220);
             this.gbAnadir.TabIndex = 34;
             this.gbAnadir.TabStop = false;
             this.gbAnadir.Text = "Añadir reserva";
@@ -136,7 +164,7 @@ namespace TPV
             // 
             this.gbTipoReserva.Controls.Add(this.cbTipo);
             this.gbTipoReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTipoReserva.Location = new System.Drawing.Point(287, 36);
+            this.gbTipoReserva.Location = new System.Drawing.Point(251, 36);
             this.gbTipoReserva.Name = "gbTipoReserva";
             this.gbTipoReserva.Size = new System.Drawing.Size(252, 80);
             this.gbTipoReserva.TabIndex = 38;
@@ -162,7 +190,7 @@ namespace TPV
             this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnadir.ForeColor = System.Drawing.Color.White;
             this.btnAnadir.Image = global::TPV.Properties.Resources.emblemnew_93501;
-            this.btnAnadir.Location = new System.Drawing.Point(331, 147);
+            this.btnAnadir.Location = new System.Drawing.Point(299, 150);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(172, 48);
             this.btnAnadir.TabIndex = 4;
@@ -175,11 +203,14 @@ namespace TPV
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(648, 461);
+            this.btnAtras.Image = global::TPV.Properties.Resources.arrow_back_left_icon_123728;
+            this.btnAtras.Location = new System.Drawing.Point(603, 461);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(115, 42);
+            this.btnAtras.Size = new System.Drawing.Size(128, 42);
             this.btnAtras.TabIndex = 32;
             this.btnAtras.Text = "Atrás";
+            this.btnAtras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAtras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
@@ -209,7 +240,7 @@ namespace TPV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 525);
+            this.ClientSize = new System.Drawing.Size(768, 525);
             this.Controls.Add(this.gpReservas);
             this.Controls.Add(this.gbEliminar);
             this.Controls.Add(this.gbModificar);
@@ -222,6 +253,7 @@ namespace TPV
             this.Load += new System.EventHandler(this.FormHacerReservas_Load);
             this.gbEliminar.ResumeLayout(false);
             this.gbModificar.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.gbAnadir.ResumeLayout(false);
             this.gbTipoReserva.ResumeLayout(false);
             this.gpReservas.ResumeLayout(false);
@@ -244,5 +276,7 @@ namespace TPV
         private System.Windows.Forms.MonthCalendar mcInsertar;
         private System.Windows.Forms.MonthCalendar mcModificar;
         private System.Windows.Forms.GroupBox gpReservas;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbTipoModificar;
     }
 }

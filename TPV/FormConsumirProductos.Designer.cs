@@ -40,8 +40,6 @@ namespace TPV
             this.lblImpuestos = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lbSeleccionProductos = new System.Windows.Forms.ListBox();
-            this.btnEliminarProducto = new System.Windows.Forms.Button();
-            this.btnImprimirFactura = new System.Windows.Forms.Button();
             this.gbProductos = new System.Windows.Forms.GroupBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +48,8 @@ namespace TPV
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminarProducto = new System.Windows.Forms.Button();
+            this.btnImprimirFactura = new System.Windows.Forms.Button();
             this.gbImportes.SuspendLayout();
             this.gbProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -63,18 +63,21 @@ namespace TPV
             this.lbProductos.Location = new System.Drawing.Point(22, 39);
             this.lbProductos.Name = "lbProductos";
             this.lbProductos.ScrollAlwaysVisible = true;
-            this.lbProductos.Size = new System.Drawing.Size(203, 148);
+            this.lbProductos.Size = new System.Drawing.Size(203, 166);
             this.lbProductos.TabIndex = 6;
             this.lbProductos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.elegirProducto);
             // 
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Image = global::TPV.Properties.Resources.arrow_back_left_icon_123728;
             this.btnAtras.Location = new System.Drawing.Point(735, 405);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(168, 42);
             this.btnAtras.TabIndex = 33;
             this.btnAtras.Text = "Atrás";
+            this.btnAtras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAtras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
@@ -162,52 +165,20 @@ namespace TPV
             this.lbSeleccionProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSeleccionProductos.FormattingEnabled = true;
             this.lbSeleccionProductos.ItemHeight = 18;
-            this.lbSeleccionProductos.Location = new System.Drawing.Point(245, 39);
+            this.lbSeleccionProductos.Location = new System.Drawing.Point(244, 39);
             this.lbSeleccionProductos.Name = "lbSeleccionProductos";
             this.lbSeleccionProductos.ScrollAlwaysVisible = true;
-            this.lbSeleccionProductos.Size = new System.Drawing.Size(376, 148);
+            this.lbSeleccionProductos.Size = new System.Drawing.Size(376, 166);
             this.lbSeleccionProductos.TabIndex = 38;
-            // 
-            // btnEliminarProducto
-            // 
-            this.btnEliminarProducto.BackColor = System.Drawing.Color.Red;
-            this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarProducto.Image = global::TPV.Properties.Resources._1486504830_delete_dustbin_empty_recycle_recycling_remove_trash_81361;
-            this.btnEliminarProducto.Location = new System.Drawing.Point(735, 287);
-            this.btnEliminarProducto.Name = "btnEliminarProducto";
-            this.btnEliminarProducto.Size = new System.Drawing.Size(168, 49);
-            this.btnEliminarProducto.TabIndex = 39;
-            this.btnEliminarProducto.Text = "Eliminar producto";
-            this.btnEliminarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminarProducto.UseVisualStyleBackColor = false;
-            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
-            // 
-            // btnImprimirFactura
-            // 
-            this.btnImprimirFactura.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnImprimirFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimirFactura.ForeColor = System.Drawing.Color.White;
-            this.btnImprimirFactura.Image = global::TPV.Properties.Resources.printer_78349;
-            this.btnImprimirFactura.Location = new System.Drawing.Point(735, 342);
-            this.btnImprimirFactura.Name = "btnImprimirFactura";
-            this.btnImprimirFactura.Size = new System.Drawing.Size(168, 50);
-            this.btnImprimirFactura.TabIndex = 3;
-            this.btnImprimirFactura.Text = "Imprimir factura";
-            this.btnImprimirFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImprimirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImprimirFactura.UseVisualStyleBackColor = false;
-            this.btnImprimirFactura.Click += new System.EventHandler(this.btnImprimirFactura_Click);
             // 
             // gbProductos
             // 
             this.gbProductos.Controls.Add(this.lbProductos);
             this.gbProductos.Controls.Add(this.lbSeleccionProductos);
             this.gbProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbProductos.Location = new System.Drawing.Point(31, 241);
+            this.gbProductos.Location = new System.Drawing.Point(31, 216);
             this.gbProductos.Name = "gbProductos";
-            this.gbProductos.Size = new System.Drawing.Size(643, 206);
+            this.gbProductos.Size = new System.Drawing.Size(643, 231);
             this.gbProductos.TabIndex = 40;
             this.gbProductos.TabStop = false;
             this.gbProductos.Text = "Productos consumidos";
@@ -222,7 +193,7 @@ namespace TPV
             this.Quantity,
             this.Tax,
             this.Total});
-            this.dgvProductos.Location = new System.Drawing.Point(31, 37);
+            this.dgvProductos.Location = new System.Drawing.Point(31, 21);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(643, 160);
             this.dgvProductos.TabIndex = 41;
@@ -256,6 +227,38 @@ namespace TPV
             // 
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
+            // 
+            // btnEliminarProducto
+            // 
+            this.btnEliminarProducto.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarProducto.Image = global::TPV.Properties.Resources._1486504830_delete_dustbin_empty_recycle_recycling_remove_trash_81361;
+            this.btnEliminarProducto.Location = new System.Drawing.Point(735, 287);
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(168, 49);
+            this.btnEliminarProducto.TabIndex = 39;
+            this.btnEliminarProducto.Text = "Eliminar producto";
+            this.btnEliminarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarProducto.UseVisualStyleBackColor = false;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
+            // 
+            // btnImprimirFactura
+            // 
+            this.btnImprimirFactura.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnImprimirFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirFactura.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirFactura.Image = global::TPV.Properties.Resources.printer_78349;
+            this.btnImprimirFactura.Location = new System.Drawing.Point(735, 342);
+            this.btnImprimirFactura.Name = "btnImprimirFactura";
+            this.btnImprimirFactura.Size = new System.Drawing.Size(168, 50);
+            this.btnImprimirFactura.TabIndex = 3;
+            this.btnImprimirFactura.Text = "Imprimir factura";
+            this.btnImprimirFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimirFactura.UseVisualStyleBackColor = false;
+            this.btnImprimirFactura.Click += new System.EventHandler(this.btnImprimirFactura_Click);
             // 
             // FormConsumirProductos
             // 

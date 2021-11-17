@@ -20,7 +20,7 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -41,9 +41,6 @@ namespace TPV
             foreach (DataRow row in d.Tables[0].Rows)
             {
                 lbProductos.Items.Add(row["Nombre"]);
-
-                Console.WriteLine(row["Nombre"]);
-
             }
 
             conexion.Close();
@@ -60,7 +57,7 @@ namespace TPV
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -101,7 +98,7 @@ namespace TPV
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -132,132 +129,10 @@ namespace TPV
             Console.ReadLine();
         }
 
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            FormAdmin formAdmin = new FormAdmin();
-            formAdmin.Show();
-            this.Hide();
-        }
-
-        private void btnAtras_Click_1(object sender, EventArgs e)
-        {
-            FormAdmin formAdmin = new FormAdmin();
-            formAdmin.Show();
-            this.Hide();
-        }
-
-        private void cambiarTextoProducto(object sender, EventArgs e)
-        {
-            if (tbProducto.Text == "Introduce el producto")
-            {
-                tbProducto.Text = "";
-                tbProducto.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoProductoSalir(object sender, EventArgs e)
-        {
-            if (tbProducto.Text == "")
-            {
-                tbProducto.Text = "Introduce el producto";
-                tbProducto.ForeColor = Color.Silver;
-            }
-        }
-
-        private void cambiarTextoPrecio(object sender, EventArgs e)
-        {
-            if (tbPrecio.Text == "Introduce el precio")
-            {
-                tbPrecio.Text = "";
-                tbPrecio.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoPrecioSalir(object sender, EventArgs e)
-        {
-            if (tbPrecio.Text == "")
-            {
-                tbPrecio.Text = "Introduce el precio";
-                tbPrecio.ForeColor = Color.Silver;
-            }
-        }
-
-        private void cambiarTextoCantidad(object sender, EventArgs e)
-        {
-            if (tbCantidad.Text == "Introduce la cantidad")
-            {
-                tbCantidad.Text = "";
-                tbCantidad.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoCantidadSalir(object sender, EventArgs e)
-        {
-            if (tbCantidad.Text == "")
-            {
-                tbCantidad.Text = "Introduce la cantidad";
-                tbCantidad.ForeColor = Color.Silver;
-            }
-        }
-
-        private void cambiarTextoProductoModificar(object sender, EventArgs e)
-        {
-            if (tbProductoModificar.Text == "Introduce el producto")
-            {
-                tbProductoModificar.Text = "";
-                tbProductoModificar.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoProductoModificarSalir(object sender, EventArgs e)
-        {
-            if (tbProductoModificar.Text == "")
-            {
-                tbProductoModificar.Text = "Introduce el producto";
-                tbProductoModificar.ForeColor = Color.Silver;
-            }
-        }
-
-        private void cambiarTextoPrecioModificar(object sender, EventArgs e)
-        {
-            if (tbPrecioModificar.Text == "Introduce el precio")
-            {
-                tbPrecioModificar.Text = "";
-                tbPrecioModificar.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoPrecioModificarSalir(object sender, EventArgs e)
-        {
-            if (tbPrecioModificar.Text == "")
-            {
-                tbPrecioModificar.Text = "Introduce el precio";
-                tbPrecioModificar.ForeColor = Color.Silver;
-            }
-        }
-
-        private void cambiarTextoCantidadModificar(object sender, EventArgs e)
-        {
-            if (tbCantidadModificar.Text == "Introduce la cantidad")
-            {
-                tbCantidadModificar.Text = "";
-                tbCantidadModificar.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoCantidadModificarSalir(object sender, EventArgs e)
-        {
-            if (tbCantidadModificar.Text == "")
-            {
-                tbCantidadModificar.Text = "Introduce la cantidad";
-                tbCantidadModificar.ForeColor = Color.Silver;
-            }
-        }
-
         private void FormAlmacen_Load(object sender, EventArgs e)
         {
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -281,7 +156,7 @@ namespace TPV
             Console.ReadLine();
         }
 
-        private void btnAtras_Click_2(object sender, EventArgs e)
+        private void btnAtras_Click(object sender, EventArgs e)
         {
             FormAdmin formAdmin = new FormAdmin();
             formAdmin.Show();

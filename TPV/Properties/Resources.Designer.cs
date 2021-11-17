@@ -73,6 +73,46 @@ namespace TPV.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _81591 {
+            get {
+                object obj = ResourceManager.GetObject("81591", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_back_left_icon_123728 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_back_left_icon_123728", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cocktail_bar_icon_150223 {
+            get {
+                object obj = ResourceManager.GetObject("cocktail_bar_icon_150223", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cutlery_114858 {
+            get {
+                object obj = ResourceManager.GetObject("cutlery_114858", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap downarrow_83759 {
             get {
                 object obj = ResourceManager.GetObject("downarrow_83759", resourceCulture);
@@ -123,6 +163,16 @@ namespace TPV.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap round_account_button_with_user_inside_icon_icons_com_72596 {
+            get {
+                object obj = ResourceManager.GetObject("round-account-button-with-user-inside_icon-icons.com_72596", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap seo_social_web_network_internet_262_icon_icons_com_61518 {
             get {
                 object obj = ResourceManager.GetObject("seo-social-web-network-internet_262_icon-icons.com_61518", resourceCulture);
@@ -136,6 +186,16 @@ namespace TPV.Properties {
         internal static System.Drawing.Bitmap uparrow_83726 {
             get {
                 object obj = ResourceManager.GetObject("uparrow_83726", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warehouse_116463 {
+            get {
+                object obj = ResourceManager.GetObject("warehouse_116463", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

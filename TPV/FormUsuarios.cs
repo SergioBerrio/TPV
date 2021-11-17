@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,7 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -66,7 +67,7 @@ namespace TPV
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -112,7 +113,7 @@ namespace TPV
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -158,83 +159,9 @@ namespace TPV
             this.Hide();
         }
 
-        private void cambiarTextoUsuario(object sender, EventArgs e)
-        {
-            if (tbUsuario.Text == "Introduce el usuario")
-            {
-                tbUsuario.Text = "";
-                tbUsuario.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoUsuarioSalir(object sender, EventArgs e)
-        {
-            if (tbUsuario.Text == "")
-            {
-                tbUsuario.Text = "Introduce el usuario";
-                tbUsuario.ForeColor = Color.Silver;
-            }
-        }
-
-        private void cambiarTextoContrasena(object sender, EventArgs e)
-        {
-            if (tbContrasena.Text == "Introduce la contraseña")
-            {
-                tbContrasena.Text = "";
-                tbContrasena.ForeColor = Color.Black;
-                //tbContrasena.PasswordChar = '*';
-            }
-        }
-
-        private void cambiarTextoContrasenaSalir(object sender, EventArgs e)
-        {
-            if (tbContrasena.Text == "")
-            {
-                tbContrasena.Text = "Introduce la contraseña";
-                tbContrasena.ForeColor = Color.Silver;
-            }
-        }
-
-        private void cambiarTextoUsuarioModificar(object sender, EventArgs e)
-        {
-            if (tbUsuarioModificar.Text == "Introduce el usuario")
-            {
-                tbUsuarioModificar.Text = "";
-                tbUsuarioModificar.ForeColor = Color.Black;
-            }
-        }
-
-        private void cambiarTextoUsuarioModificarSalir(object sender, EventArgs e)
-        {
-            if (tbUsuarioModificar.Text == "")
-            {
-                tbUsuarioModificar.Text = "Introduce el usuario";
-                tbUsuarioModificar.ForeColor = Color.Silver;
-            }
-        }
-
-        private void cambiarTextoContrasenaModificar(object sender, EventArgs e)
-        {
-            if (tbContrasenaModificar.Text == "Introduce la contraseña")
-            {
-                tbContrasenaModificar.Text = "";
-                tbContrasenaModificar.ForeColor = Color.Black;
-                //tbContrasenaModificar.PasswordChar = '*';
-            }
-        }
-
-        private void cambiarTextoContrasenaModificarSalir(object sender, EventArgs e)
-        {
-            if (tbContrasenaModificar.Text == "")
-            {
-                tbContrasenaModificar.Text = "Introduce la contraseña";
-                tbContrasenaModificar.ForeColor = Color.Silver;
-            }
-        }
-
         private void cargarForm(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -250,6 +177,8 @@ namespace TPV
                 lbUsuarios.Items.Add(row["Usuario"]);
 
             }
+
+            conexion.Close();
 
             conexion.Close();
         }

@@ -31,9 +31,9 @@ namespace TPV
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuario));
             this.lblAdmin = new System.Windows.Forms.Label();
-            this.btnConsumirProductos = new System.Windows.Forms.Button();
             this.btnHacerReservas = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.btnConsumirProductos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblAdmin
@@ -46,25 +46,17 @@ namespace TPV
             this.lblAdmin.TabIndex = 5;
             this.lblAdmin.Text = "Panel de control del Usuario";
             // 
-            // btnConsumirProductos
-            // 
-            this.btnConsumirProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsumirProductos.Location = new System.Drawing.Point(24, 114);
-            this.btnConsumirProductos.Name = "btnConsumirProductos";
-            this.btnConsumirProductos.Size = new System.Drawing.Size(204, 147);
-            this.btnConsumirProductos.TabIndex = 6;
-            this.btnConsumirProductos.Text = "Consumir productos";
-            this.btnConsumirProductos.UseVisualStyleBackColor = true;
-            this.btnConsumirProductos.Click += new System.EventHandler(this.btnConsumirProductos_Click);
-            // 
             // btnHacerReservas
             // 
             this.btnHacerReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHacerReservas.Image = global::TPV.Properties.Resources.cutlery_114858;
             this.btnHacerReservas.Location = new System.Drawing.Point(299, 114);
             this.btnHacerReservas.Name = "btnHacerReservas";
             this.btnHacerReservas.Size = new System.Drawing.Size(204, 147);
             this.btnHacerReservas.TabIndex = 7;
             this.btnHacerReservas.Text = "Hacer reservas";
+            this.btnHacerReservas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHacerReservas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHacerReservas.UseVisualStyleBackColor = true;
             this.btnHacerReservas.Click += new System.EventHandler(this.btnHacerReservas_Click);
             // 
@@ -80,6 +72,20 @@ namespace TPV
             this.btnCerrarSesion.Text = "Cerrar sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnConsumirProductos
+            // 
+            this.btnConsumirProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsumirProductos.Image = global::TPV.Properties.Resources.cocktail_bar_icon_150223;
+            this.btnConsumirProductos.Location = new System.Drawing.Point(24, 114);
+            this.btnConsumirProductos.Name = "btnConsumirProductos";
+            this.btnConsumirProductos.Size = new System.Drawing.Size(204, 147);
+            this.btnConsumirProductos.TabIndex = 6;
+            this.btnConsumirProductos.Text = "Consumir productos";
+            this.btnConsumirProductos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnConsumirProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnConsumirProductos.UseVisualStyleBackColor = true;
+            this.btnConsumirProductos.Click += new System.EventHandler(this.btnConsumirProductos_Click);
             // 
             // FormUsuario
             // 
