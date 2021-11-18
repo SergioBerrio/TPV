@@ -100,6 +100,7 @@ namespace TPV
             this.Name = "FormUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pandel de Usuario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cerrarAplicacion);
             this.ResumeLayout(false);
             this.PerformLayout();
 

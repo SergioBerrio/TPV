@@ -35,7 +35,7 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -76,7 +76,7 @@ namespace TPV
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -107,7 +107,7 @@ namespace TPV
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -141,7 +141,7 @@ namespace TPV
             cbTipo.SelectedItem = "Comida";
             cbTipoModificar.SelectedItem = "Comida";
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -182,6 +182,11 @@ namespace TPV
             FormUsuario formUsuario = new FormUsuario(nombreUsuarioLogeado);
             formUsuario.Show();
             this.Hide();
+        }
+
+        private void cerrarAplicacion(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

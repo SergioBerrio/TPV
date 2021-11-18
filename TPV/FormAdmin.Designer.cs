@@ -100,6 +100,7 @@ namespace TPV
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel del Admin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cerrarAplicacion);
             this.ResumeLayout(false);
             this.PerformLayout();
 

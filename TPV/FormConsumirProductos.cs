@@ -19,7 +19,16 @@ namespace TPV
     public partial class FormConsumirProductos : Form
     {
         String nombre;
-        ArrayList arrayListCantidades = new ArrayList();
+        //ArrayList arrayListCantidades = new ArrayList();
+        int contCafe = 0;
+        int contCerveza = 0;
+        int contVino = 0;
+        int contKalimotxo = 0;
+
+        int unidades = 0;
+        String producto = "";
+        double precio = 0;
+        double importe = 0;
 
         public FormConsumirProductos()
         {
@@ -30,7 +39,7 @@ namespace TPV
         {
             int aux = -1;
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -46,7 +55,7 @@ namespace TPV
 
                 String var1 = (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) - Convert.ToDouble(row["Precio"])).ToString();
 
-                double impuesto = Convert.ToDouble(row["Precio"]) * 0.04;
+                double impuesto = Convert.ToDouble(row["Precio"]) * 0.1;
                 String var2 = (Convert.ToDouble(tbTotal.Text.Split(' ')[0]) - (Convert.ToDouble(row["Precio"]) + impuesto)).ToString();
 
                 tbSubtotal.Text = var1 + " €";
@@ -82,7 +91,7 @@ namespace TPV
 
         private void FormConsumirProductos_Load(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -143,25 +152,25 @@ namespace TPV
 
                 MessageBox.Show("Creación de la factura en curso...", "Factura de TPV", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                string ruta = "C:/DATOS/Factura.txt";
+                /*string rutaTXT = "C:/DATOS/Factura.txt";
 
                 try
                 {
                     // Check if file already exists. If yes, delete it.     
-                    if (File.Exists(ruta))
+                    if (File.Exists(rutaTXT))
                     {
-                        File.Delete(ruta);
+                        File.Delete(rutaTXT);
                     }
 
                     // Create a new file     
-                    using (StreamWriter sw = File.CreateText(ruta))
+                    using (StreamWriter sw = File.CreateText(rutaTXT))
                     {
-                        sw.WriteLine("======================================================================================");
-                        sw.WriteLine(" Unidades                  Producto                Precio                     Importe");
-                        sw.WriteLine("======================================================================================");
+                        sw.WriteLine("=============================================================");
+                        sw.WriteLine(" Producto                Precio                     Importe ");
+                        sw.WriteLine("=============================================================");
                         for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
                         {
-                            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+                            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
                             conexion.Open();
 
@@ -174,25 +183,43 @@ namespace TPV
 
                             foreach (DataRow row in d.Tables[0].Rows)
                             {
-                                Console.WriteLine(Convert.ToString(row["Nombre"]));
-                                Console.WriteLine(Convert.ToString(row["Precio"]));
-                                Console.WriteLine(Convert.ToString(row["Cantidad"]));
-                                Console.WriteLine(Convert.ToString(row["Impuestos"]));
-                                Console.WriteLine(Convert.ToString(row["Total"]));
 
-                                sw.WriteLine(lbSeleccionProductos.Items.Count.ToString() + "                          " + lbSeleccionProductos.Items[i] + "                     " + Convert.ToString(row["Precio"]) + "                        " + Convert.ToString(Convert.ToDouble(row["Cantidad"]) * Convert.ToDouble(row["Precio"])));
+                                producto = lbSeleccionProductos.Items[i].ToString();
 
+                                precio = Convert.ToDouble(row["Precio"]);
+
+                                importe = precio;
+
+                                sw.WriteLine(producto + "                     " + precio + "                        " + importe);
+
+
+                                OleDbConnection conexion2 = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+
+                                conexion2.Open();
+
+                                String query2 = "UPDATE Productos SET Cantidad = " + (Convert.ToInt32(row["Cantidad"]) - 1) + " WHERE Producto = '" + lbSeleccionProductos.Items[i] + "'";
+
+                                Console.WriteLine(query2);
+
+                                OleDbCommand comando = new OleDbCommand(query2, conexion2);
+                                comando.ExecuteNonQuery();
+
+                                conexion.Close();
+                                conexion2.Close();
+
+                                dgvProductos.Rows.Clear();
+                                dgvProductos.Refresh();
                             }
                             
                         }
                         sw.WriteLine("======================================================================================");
-                        sw.WriteLine("Importe Base: " + tbSubtotal.Text + "                      " + "IVA " + tbImpuestos.Text + "                " + "Importe IVA: " + (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) * 0.04).ToString() + " €");
+                        sw.WriteLine(" Importe Base: " + tbSubtotal.Text + "     " + "IVA " + tbImpuestos.Text + "     " + "Importe IVA:    " + (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) * 0.1).ToString() + " €");
                         sw.WriteLine("======================================================================================");
-                        sw.WriteLine("TOTAL EUROS (IMP. INCLUIDOS)                                               " + tbTotal.Text);
+                        sw.WriteLine(" TOTAL EUROS (IMP. INCLUIDOS)          " + tbTotal.Text);
                     }
 
                     // Open the stream and read it back.    
-                    using (StreamReader sr = File.OpenText(ruta))
+                    using (StreamReader sr = File.OpenText(rutaTXT))
                     {
                         string s = "";
                         while ((s = sr.ReadLine()) != null)
@@ -204,29 +231,73 @@ namespace TPV
                 catch (Exception Ex)
                 {
                     Console.WriteLine(Ex.ToString());
+                }*/
+
+
+
+                // Initialize document object
+                Document factura = new Document();
+
+                // Add page
+                Page page = factura.Pages.Add();
+
+                // Add text to new page
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("========================================"));
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(" Producto                Precio                     Importe "));
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("========================================"));
+                for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
+                {
+                    OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+
+                    conexion.Open();
+
+                    String query = "SELECT * FROM Productos WHERE Nombre = '" + lbSeleccionProductos.Items[i] + "'";
+
+                    OleDbDataAdapter adapter = new OleDbDataAdapter(query, conexion);
+
+                    DataSet d = new DataSet();
+                    adapter.Fill(d);
+
+                    foreach (DataRow row in d.Tables[0].Rows)
+                    {
+
+                        producto = lbSeleccionProductos.Items[i].ToString();
+
+                        precio = Convert.ToDouble(row["Precio"]);
+
+                        importe = precio;
+
+                        page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(producto + "                     " + precio + "                        " + importe));
+
+
+                        OleDbConnection conexion2 = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+
+                        conexion2.Open();
+
+                        String query2 = "UPDATE Productos SET Cantidad = " + (Convert.ToInt32(row["Cantidad"]) - 1) + " WHERE Producto = '" + lbSeleccionProductos.Items[i] + "'";
+
+                        Console.WriteLine(query2);
+
+                        OleDbCommand comando = new OleDbCommand(query2, conexion2);
+                        comando.ExecuteNonQuery();
+
+                        conexion2.Close();
+
+                        dgvProductos.Rows.Clear();
+                        dgvProductos.Refresh();
+                    }
                 }
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("=========================================="));
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(" Importe Base: " + tbSubtotal.Text + "     " + "IVA " + tbImpuestos.Text + "        " + "Importe IVA: " + (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) * 0.1).ToString() + " €"));
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("=========================================="));
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(" TOTAL EUROS (IMP. INCLUIDOS)          " + tbTotal.Text));
+
+                // Save PDF 
+                String rutaPDF = "C:/DATOS/Factura.pdf";
+                factura.Save(rutaPDF);
+                System.Diagnostics.Process.Start("C:/DATOS/Factura.pdf");
             }
-                
-            
 
-            // Initialize document object
-            //Document factura = new Document();
-
-            // Add page
-            //Page page = factura.Pages.Add();
-
-            // Add text to new page
-            /*page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("[Factura de los productos consumidos]"));
-            for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
-            {
-                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(Convert.ToString(lbSeleccionProductos.Items[i]) + " - "));
-            }
-            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Precio subtotal: " + tbSubtotal.Text));
-            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Porcentaje de impuestos: " + tbImpuestos.Text));
-            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Precio total de la consumición: " + tbTotal.Text));*/
-
-            // Save PDF 
-            //factura.Save("C:/DATOS/Factura.pdf");
         }
 
         private void elegirProducto(object sender, MouseEventArgs e)
@@ -236,7 +307,7 @@ namespace TPV
             double subtotal;
             int impuestos;
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/USER/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
             conexion.Open();
 
@@ -262,13 +333,13 @@ namespace TPV
 
                 if (tbTotal.Text.Equals("€"))
                 {
-                    double impuesto = Convert.ToDouble(row["Precio"]) * 0.04;
+                    double impuesto = Convert.ToDouble(row["Precio"]) * 0.1;
                     tbTotal.Text = (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) + impuesto).ToString() + " €";
 
                 }
                 else
                 {
-                    double impuesto = Convert.ToDouble(row["Precio"]) * 0.04;
+                    double impuesto = Convert.ToDouble(row["Precio"]) * 0.1;
                     tbTotal.Text = (Convert.ToDouble(tbTotal.Text.Split(' ')[0]) + (Convert.ToDouble(row["Precio"]) + impuesto)).ToString() + " €";
                 }
 
@@ -310,6 +381,11 @@ namespace TPV
             FormUsuario formUsuario = new FormUsuario(nombre);
             formUsuario.Show();
             this.Hide();
+        }
+
+        private void cerrarAplicacion(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

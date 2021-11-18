@@ -42,5 +42,10 @@ namespace TPV
             formLogin.Show();
             this.Hide();
         }
+
+        private void cerrarAplicacion(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

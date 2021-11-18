@@ -250,6 +250,7 @@ namespace TPV
             this.Name = "FormHacerReservas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hacer Reservas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cerrarAplicacion);
             this.Load += new System.EventHandler(this.FormHacerReservas_Load);
             this.gbEliminar.ResumeLayout(false);
             this.gbModificar.ResumeLayout(false);

@@ -37,18 +37,18 @@ namespace TPV
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbAdmin = new System.Windows.Forms.CheckBox();
+            this.btnAnadir = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbContrasenaModificar = new System.Windows.Forms.TextBox();
             this.tbUsuarioModificar = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbUsuarios = new System.Windows.Forms.ListBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAnadir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -61,6 +61,7 @@ namespace TPV
             this.tbContrasena.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.tbContrasena.Location = new System.Drawing.Point(113, 85);
             this.tbContrasena.Name = "tbContrasena";
+            this.tbContrasena.PasswordChar = '*';
             this.tbContrasena.Size = new System.Drawing.Size(109, 20);
             this.tbContrasena.TabIndex = 2;
             // 
@@ -134,6 +135,22 @@ namespace TPV
             this.cbAdmin.Text = "Es Admin";
             this.cbAdmin.UseVisualStyleBackColor = true;
             // 
+            // btnAnadir
+            // 
+            this.btnAnadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnadir.ForeColor = System.Drawing.Color.White;
+            this.btnAnadir.Image = global::TPV.Properties.Resources.emblemnew_93501;
+            this.btnAnadir.Location = new System.Drawing.Point(33, 170);
+            this.btnAnadir.Name = "btnAnadir";
+            this.btnAnadir.Size = new System.Drawing.Size(176, 49);
+            this.btnAnadir.TabIndex = 4;
+            this.btnAnadir.Text = "Añadir";
+            this.btnAnadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAnadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnadir.UseVisualStyleBackColor = false;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label3);
@@ -176,6 +193,7 @@ namespace TPV
             this.tbContrasenaModificar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.tbContrasenaModificar.Location = new System.Drawing.Point(112, 76);
             this.tbContrasenaModificar.Name = "tbContrasenaModificar";
+            this.tbContrasenaModificar.PasswordChar = '*';
             this.tbContrasenaModificar.Size = new System.Drawing.Size(109, 20);
             this.tbContrasenaModificar.TabIndex = 11;
             // 
@@ -199,6 +217,22 @@ namespace TPV
             this.checkBox1.Text = "Es Admin";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Image = global::TPV.Properties.Resources.edit_icon_icons_com_66118;
+            this.btnModificar.Location = new System.Drawing.Point(30, 170);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(180, 49);
+            this.btnModificar.TabIndex = 8;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnEliminar);
@@ -209,6 +243,22 @@ namespace TPV
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Eliminar usuario";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Image = global::TPV.Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
+            this.btnEliminar.Location = new System.Drawing.Point(33, 42);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(176, 49);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox4
             // 
@@ -231,54 +281,6 @@ namespace TPV
             this.lbUsuarios.Size = new System.Drawing.Size(166, 310);
             this.lbUsuarios.TabIndex = 0;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Red;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Image = global::TPV.Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
-            this.btnEliminar.Location = new System.Drawing.Point(33, 42);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(176, 49);
-            this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Image = global::TPV.Properties.Resources.edit_icon_icons_com_66118;
-            this.btnModificar.Location = new System.Drawing.Point(30, 170);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(180, 49);
-            this.btnModificar.TabIndex = 8;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnAnadir
-            // 
-            this.btnAnadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAnadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnadir.ForeColor = System.Drawing.Color.White;
-            this.btnAnadir.Image = global::TPV.Properties.Resources.emblemnew_93501;
-            this.btnAnadir.Location = new System.Drawing.Point(33, 170);
-            this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(176, 49);
-            this.btnAnadir.TabIndex = 4;
-            this.btnAnadir.Text = "Añadir";
-            this.btnAnadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAnadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAnadir.UseVisualStyleBackColor = false;
-            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
-            // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +295,7 @@ namespace TPV
             this.Name = "FormUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cerrarAplicacion);
             this.Load += new System.EventHandler(this.cargarForm);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

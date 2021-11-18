@@ -88,6 +88,7 @@ namespace TPV
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(177, 26);
             this.tbUsuario.TabIndex = 3;
+            this.tbUsuario.Enter += new System.EventHandler(this.seleccionarTextoUsuario);
             // 
             // tbContrasena
             // 
@@ -97,6 +98,7 @@ namespace TPV
             this.tbContrasena.PasswordChar = '*';
             this.tbContrasena.Size = new System.Drawing.Size(177, 26);
             this.tbContrasena.TabIndex = 4;
+            this.tbContrasena.Enter += new System.EventHandler(this.seleccionarTextoContrasena);
             // 
             // FormLogin
             // 

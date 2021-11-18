@@ -274,6 +274,7 @@ namespace TPV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consumir Productos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cerrarAplicacion);
             this.Load += new System.EventHandler(this.FormConsumirProductos_Load);
             this.gbImportes.ResumeLayout(false);
             this.gbImportes.PerformLayout();
