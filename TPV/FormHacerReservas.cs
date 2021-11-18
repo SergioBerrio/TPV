@@ -68,7 +68,7 @@ namespace TPV
         {
             DateTime fechaMin = DateTime.Now;
 
-            if (fechaMin >= mcInsertar.SelectionRange.Start)
+            if (fechaMin >= mcModificar.SelectionRange.Start)
             {
                 MessageBox.Show("No se permite elegir una fecha anterior a hoy!!", "Fecha incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

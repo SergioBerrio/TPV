@@ -145,7 +145,7 @@ namespace TPV
             // tbCantidadModificar
             // 
             this.tbCantidadModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCantidadModificar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbCantidadModificar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbCantidadModificar.Location = new System.Drawing.Point(122, 127);
             this.tbCantidadModificar.Name = "tbCantidadModificar";
             this.tbCantidadModificar.Size = new System.Drawing.Size(99, 20);
@@ -154,7 +154,7 @@ namespace TPV
             // tbPrecioModificar
             // 
             this.tbPrecioModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrecioModificar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbPrecioModificar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbPrecioModificar.Location = new System.Drawing.Point(122, 84);
             this.tbPrecioModificar.Name = "tbPrecioModificar";
             this.tbPrecioModificar.Size = new System.Drawing.Size(99, 20);
@@ -163,7 +163,7 @@ namespace TPV
             // tbProductoModificar
             // 
             this.tbProductoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProductoModificar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbProductoModificar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbProductoModificar.Location = new System.Drawing.Point(122, 48);
             this.tbProductoModificar.Name = "tbProductoModificar";
             this.tbProductoModificar.Size = new System.Drawing.Size(99, 20);
@@ -235,7 +235,7 @@ namespace TPV
             // tbCantidad
             // 
             this.tbCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCantidad.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbCantidad.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbCantidad.Location = new System.Drawing.Point(109, 128);
             this.tbCantidad.Name = "tbCantidad";
             this.tbCantidad.Size = new System.Drawing.Size(99, 20);
@@ -260,7 +260,7 @@ namespace TPV
             // tbPrecio
             // 
             this.tbPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrecio.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbPrecio.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbPrecio.Location = new System.Drawing.Point(109, 85);
             this.tbPrecio.Name = "tbPrecio";
             this.tbPrecio.Size = new System.Drawing.Size(99, 20);
@@ -269,7 +269,7 @@ namespace TPV
             // tbProducto
             // 
             this.tbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbProducto.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbProducto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbProducto.Location = new System.Drawing.Point(109, 49);
             this.tbProducto.Name = "tbProducto";
             this.tbProducto.Size = new System.Drawing.Size(99, 20);

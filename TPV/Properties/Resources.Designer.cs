@@ -153,6 +153,16 @@ namespace TPV.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print_black_printer_tool_symbol_icon_icons_com_54467 {
+            get {
+                object obj = ResourceManager.GetObject("print-black-printer-tool-symbol_icon-icons.com_54467", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap printer_78349 {
             get {
                 object obj = ResourceManager.GetObject("printer_78349", resourceCulture);

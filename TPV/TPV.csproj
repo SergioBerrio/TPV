@@ -159,6 +159,7 @@
     <Content Include="Database1.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\print-black-printer-tool-symbol_icon-icons.com_54467.ico" />
     <None Include="Resources\cutlery_114858.ico" />
     <None Include="Resources\cocktail_bar_icon_150223.ico" />
     <None Include="Resources\warehouse_116463.ico" />
@@ -168,11 +169,6 @@
     <None Include="Resources\seo-social-web-network-internet_262_icon-icons.com_61518.ico" />
     <None Include="Resources\edit_icon-icons.com_66118.ico" />
     <None Include="Resources\emblemnew_93501.ico" />
-    <None Include="Resources\1486504830-delete-dustbin-empty-recycle-recycling-remove-trash_81361.ico" />
-    <None Include="Resources\iconfinder-trash-4341321_120557.ico" />
-    <None Include="Resources\printer_78349.ico" />
-    <None Include="Resources\uparrow_83726.png" />
-    <None Include="Resources\downarrow_83759.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

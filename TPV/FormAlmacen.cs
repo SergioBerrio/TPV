@@ -75,7 +75,7 @@ namespace TPV
 
             conexion.Close();
 
-            MessageBox.Show("Producto modificado: " + "\nProducto: " + tbProducto.Text + " \nPrecio: " + tbPrecio.Text + " \n Cantidad" + tbCantidad.Text, "Modificar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Producto modificado: " + "\nProducto: " + tbProductoModificar.Text + " \nPrecio: " + tbPrecioModificar.Text + " \n Cantidad" + tbCantidadModificar.Text, "Modificar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace TPV
 
             conexion.Close();
 
-            MessageBox.Show("Producto eliminado: " + tbProducto.Text, "Eliminar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Producto eliminado: " + lbProductos.SelectedItem, "Eliminar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void FormAlmacen_Load(object sender, EventArgs e)

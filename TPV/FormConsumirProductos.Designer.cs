@@ -70,8 +70,7 @@ namespace TPV
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Image = global::TPV.Properties.Resources.arrow_back_left_icon_123728;
-            this.btnAtras.Location = new System.Drawing.Point(735, 405);
+            this.btnAtras.Location = new System.Drawing.Point(711, 405);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(168, 42);
             this.btnAtras.TabIndex = 33;
@@ -123,7 +122,7 @@ namespace TPV
             this.gbImportes.Controls.Add(this.tbImpuestos);
             this.gbImportes.Controls.Add(this.tbTotal);
             this.gbImportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbImportes.Location = new System.Drawing.Point(735, 21);
+            this.gbImportes.Location = new System.Drawing.Point(711, 21);
             this.gbImportes.Name = "gbImportes";
             this.gbImportes.Size = new System.Drawing.Size(168, 238);
             this.gbImportes.TabIndex = 37;
@@ -195,7 +194,7 @@ namespace TPV
             this.Total});
             this.dgvProductos.Location = new System.Drawing.Point(31, 21);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(643, 160);
+            this.dgvProductos.Size = new System.Drawing.Size(643, 175);
             this.dgvProductos.TabIndex = 41;
             // 
             // Id
@@ -233,8 +232,7 @@ namespace TPV
             this.btnEliminarProducto.BackColor = System.Drawing.Color.Red;
             this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarProducto.Image = global::TPV.Properties.Resources._1486504830_delete_dustbin_empty_recycle_recycling_remove_trash_81361;
-            this.btnEliminarProducto.Location = new System.Drawing.Point(735, 287);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(711, 287);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(168, 49);
             this.btnEliminarProducto.TabIndex = 39;
@@ -249,8 +247,7 @@ namespace TPV
             this.btnImprimirFactura.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnImprimirFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimirFactura.ForeColor = System.Drawing.Color.White;
-            this.btnImprimirFactura.Image = global::TPV.Properties.Resources.printer_78349;
-            this.btnImprimirFactura.Location = new System.Drawing.Point(735, 342);
+            this.btnImprimirFactura.Location = new System.Drawing.Point(711, 342);
             this.btnImprimirFactura.Name = "btnImprimirFactura";
             this.btnImprimirFactura.Size = new System.Drawing.Size(168, 50);
             this.btnImprimirFactura.TabIndex = 3;
@@ -264,7 +261,7 @@ namespace TPV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 460);
+            this.ClientSize = new System.Drawing.Size(905, 460);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.gbProductos);
             this.Controls.Add(this.btnEliminarProducto);
@@ -272,6 +269,7 @@ namespace TPV
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnImprimirFactura);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormConsumirProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consumir Productos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cerrarAplicacion);

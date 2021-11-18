@@ -98,7 +98,7 @@ namespace TPV
 
             conexion.Close();
 
-            MessageBox.Show("Uaurio modificado: " + "\nNombre: " + tbUsuario.Text + " \nContraseña: " + tbContrasena.Text, "Modificar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Usurio modificado: " + "\nNombre: " + tbUsuarioModificar.Text + " \nContraseña: " + tbContrasenaModificar.Text, "Modificar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -139,7 +139,7 @@ namespace TPV
 
             conexion.Close();
 
-            MessageBox.Show("usuario eliminado: " + "\nNombre: " + tbUsuario.Text + " \nContraseña: " + tbContrasena.Text, "Eliminar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Usuario eliminado: " + "\nNombre: " + lbUsuarios.SelectedItem, "Eliminar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void cargarForm(object sender, EventArgs e)

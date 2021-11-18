@@ -58,7 +58,7 @@ namespace TPV
             // tbContrasena
             // 
             this.tbContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContrasena.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbContrasena.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbContrasena.Location = new System.Drawing.Point(113, 85);
             this.tbContrasena.Name = "tbContrasena";
             this.tbContrasena.PasswordChar = '*';
@@ -68,7 +68,7 @@ namespace TPV
             // tbUsuario
             // 
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbUsuario.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbUsuario.Location = new System.Drawing.Point(113, 49);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(109, 20);
@@ -190,7 +190,7 @@ namespace TPV
             // tbContrasenaModificar
             // 
             this.tbContrasenaModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContrasenaModificar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbContrasenaModificar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbContrasenaModificar.Location = new System.Drawing.Point(112, 76);
             this.tbContrasenaModificar.Name = "tbContrasenaModificar";
             this.tbContrasenaModificar.PasswordChar = '*';
@@ -200,7 +200,7 @@ namespace TPV
             // tbUsuarioModificar
             // 
             this.tbUsuarioModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuarioModificar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbUsuarioModificar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tbUsuarioModificar.Location = new System.Drawing.Point(112, 40);
             this.tbUsuarioModificar.Name = "tbUsuarioModificar";
             this.tbUsuarioModificar.Size = new System.Drawing.Size(109, 20);

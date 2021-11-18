@@ -20,12 +20,7 @@ namespace TPV
     {
         String nombre;
         //ArrayList arrayListCantidades = new ArrayList();
-        int contCafe = 0;
-        int contCerveza = 0;
-        int contVino = 0;
-        int contKalimotxo = 0;
 
-        int unidades = 0;
         String producto = "";
         double precio = 0;
         double importe = 0;
@@ -270,27 +265,35 @@ namespace TPV
                         page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(producto + "                     " + precio + "                        " + importe));
 
 
-                        OleDbConnection conexion2 = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+                        try
+                        {
+                            OleDbConnection conexion2 = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
 
-                        conexion2.Open();
+                            conexion2.Open();
 
-                        String query2 = "UPDATE Productos SET Cantidad = " + (Convert.ToInt32(row["Cantidad"]) - 1) + " WHERE Producto = '" + lbSeleccionProductos.Items[i] + "'";
+                            String query2 = "UPDATE Productos SET Cantidad = " + (Convert.ToInt32(row["Cantidad"]) - 1) + " WHERE Nombre = '" + lbSeleccionProductos.Items[i] + "'";
 
-                        Console.WriteLine(query2);
+                            Console.WriteLine(query2);
 
-                        OleDbCommand comando = new OleDbCommand(query2, conexion2);
-                        comando.ExecuteNonQuery();
+                            OleDbCommand comando = new OleDbCommand(query2, conexion2);
+                            comando.ExecuteNonQuery();
 
-                        conexion2.Close();
+                            conexion2.Close();
 
-                        dgvProductos.Rows.Clear();
-                        dgvProductos.Refresh();
+                            dgvProductos.Rows.Clear();
+                            dgvProductos.Refresh();
+
+                        } catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                        
                     }
                 }
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("=========================================="));
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(" Importe Base: " + tbSubtotal.Text + "     " + "IVA " + tbImpuestos.Text + "        " + "Importe IVA: " + (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) * 0.1).ToString() + " €"));
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("=========================================="));
-                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(" TOTAL EUROS (IMP. INCLUIDOS)          " + tbTotal.Text));
+                page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(" TOTAL EUROS (IMP. INCLUIDOS)                " + tbTotal.Text));
 
                 // Save PDF 
                 String rutaPDF = "C:/DATOS/Factura.pdf";
