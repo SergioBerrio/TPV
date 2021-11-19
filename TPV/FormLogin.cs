@@ -22,7 +22,7 @@ namespace TPV
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:/Users/2DAM3/source/repos/TPV/TPV/Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
 
             conexion.Open();
 
@@ -62,6 +62,7 @@ namespace TPV
 
             if(correcto == 0){
                 MessageBox.Show("Usuario incorrecto, introduce de nuevo los datos!!", "Usuario incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbUsuario.SelectAll();
             }
 
             conexion.Close();

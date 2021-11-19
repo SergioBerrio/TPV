@@ -32,14 +32,14 @@ namespace TPV
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.btnAlmacen = new System.Windows.Forms.Button();
             this.lblAdmin = new System.Windows.Forms.Label();
-            this.btnCerrarSesión = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnCerrarSesión = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAlmacen
             // 
             this.btnAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlmacen.Image = global::TPV.Properties.Resources.warehouse_116463;
+            this.btnAlmacen.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmacen.Image")));
             this.btnAlmacen.Location = new System.Drawing.Point(38, 121);
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.Size = new System.Drawing.Size(204, 147);
@@ -60,23 +60,10 @@ namespace TPV
             this.lblAdmin.TabIndex = 2;
             this.lblAdmin.Text = "Panel de control del Admin";
             // 
-            // btnCerrarSesión
-            // 
-            this.btnCerrarSesión.BackColor = System.Drawing.Color.Maroon;
-            this.btnCerrarSesión.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesión.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesión.Location = new System.Drawing.Point(172, 302);
-            this.btnCerrarSesión.Name = "btnCerrarSesión";
-            this.btnCerrarSesión.Size = new System.Drawing.Size(184, 57);
-            this.btnCerrarSesión.TabIndex = 9;
-            this.btnCerrarSesión.Text = "Cerrar sesión";
-            this.btnCerrarSesión.UseVisualStyleBackColor = false;
-            this.btnCerrarSesión.Click += new System.EventHandler(this.btnCerrarSesión_Click);
-            // 
             // btnUsuarios
             // 
             this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Image = global::TPV.Properties.Resources.round_account_button_with_user_inside_icon_icons_com_72596;
+            this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
             this.btnUsuarios.Location = new System.Drawing.Point(287, 121);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(204, 147);
@@ -86,6 +73,22 @@ namespace TPV
             this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // btnCerrarSesión
+            // 
+            this.btnCerrarSesión.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCerrarSesión.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesión.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSesión.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesión.Image")));
+            this.btnCerrarSesión.Location = new System.Drawing.Point(155, 302);
+            this.btnCerrarSesión.Name = "btnCerrarSesión";
+            this.btnCerrarSesión.Size = new System.Drawing.Size(201, 57);
+            this.btnCerrarSesión.TabIndex = 9;
+            this.btnCerrarSesión.Text = "Cerrar sesión";
+            this.btnCerrarSesión.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSesión.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrarSesión.UseVisualStyleBackColor = false;
+            this.btnCerrarSesión.Click += new System.EventHandler(this.btnCerrarSesión_Click);
             // 
             // FormAdmin
             // 

@@ -49,7 +49,7 @@ namespace TPV
             // btnHacerReservas
             // 
             this.btnHacerReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHacerReservas.Image = global::TPV.Properties.Resources.cutlery_114858;
+            this.btnHacerReservas.Image = ((System.Drawing.Image)(resources.GetObject("btnHacerReservas.Image")));
             this.btnHacerReservas.Location = new System.Drawing.Point(299, 114);
             this.btnHacerReservas.Name = "btnHacerReservas";
             this.btnHacerReservas.Size = new System.Drawing.Size(204, 147);
@@ -62,21 +62,24 @@ namespace TPV
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.Maroon;
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(176, 293);
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.Location = new System.Drawing.Point(168, 293);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(184, 57);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(202, 57);
             this.btnCerrarSesion.TabIndex = 8;
             this.btnCerrarSesion.Text = "Cerrar sesión";
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnConsumirProductos
             // 
             this.btnConsumirProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsumirProductos.Image = global::TPV.Properties.Resources.cocktail_bar_icon_150223;
+            this.btnConsumirProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnConsumirProductos.Image")));
             this.btnConsumirProductos.Location = new System.Drawing.Point(24, 114);
             this.btnConsumirProductos.Name = "btnConsumirProductos";
             this.btnConsumirProductos.Size = new System.Drawing.Size(204, 147);
@@ -99,7 +102,7 @@ namespace TPV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pandel de Usuario";
+            this.Text = "Panel de Usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cerrarAplicacion);
             this.ResumeLayout(false);
             this.PerformLayout();

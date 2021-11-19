@@ -159,16 +159,7 @@
     <Content Include="Database1.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\print-black-printer-tool-symbol_icon-icons.com_54467.ico" />
-    <None Include="Resources\cutlery_114858.ico" />
-    <None Include="Resources\cocktail_bar_icon_150223.ico" />
-    <None Include="Resources\warehouse_116463.ico" />
-    <None Include="Resources\round-account-button-with-user-inside_icon-icons.com_72596.ico" />
-    <None Include="Resources\81591.png" />
-    <None Include="Resources\arrow_back_left_icon_123728.ico" />
-    <None Include="Resources\seo-social-web-network-internet_262_icon-icons.com_61518.ico" />
-    <None Include="Resources\edit_icon-icons.com_66118.ico" />
-    <None Include="Resources\emblemnew_93501.ico" />
+    <None Include="Imagenes\login_icon_137429.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -181,6 +172,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
