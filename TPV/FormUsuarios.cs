@@ -23,128 +23,152 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
-
-            conexion.Open();
-
-            if (cbAdmin.Checked)
+            if (tbUsuario.Text == "" || tbContrasena.Text == "")
             {
-                esAdmin = 1;
+                MessageBox.Show("Introduce datos en los campos!!", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             } else {
 
-                esAdmin = 0;
+                OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
+
+                conexion.Open();
+
+                if (cbAdmin.Checked)
+                {
+                    esAdmin = 1;
+
+                }
+                else
+                {
+
+                    esAdmin = 0;
+                }
+
+                String query = "INSERT INTO Usuarios (Usuario, Contrasena, Admin) VALUES ( '" + tbUsuario.Text + "', '" + tbContrasena.Text + "', " + esAdmin + ")";
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+                comando.ExecuteNonQuery();
+
+                lbUsuarios.Items.Clear();
+
+                String query2 = "SELECT * FROM Usuarios";
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
+
+                DataSet d = new DataSet();
+                adapter.Fill(d);
+
+                foreach (DataRow row in d.Tables[0].Rows)
+                {
+                    lbUsuarios.Items.Add(row["Usuario"]);
+                }
+
+                conexion.Close();
+
+                MessageBox.Show("Nuevo usuario: " + "\nNombre: " + tbUsuario.Text + " \nContraseña: " + tbContrasena.Text, "Añadir usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            String query = "INSERT INTO Usuarios (Usuario, Contrasena, Admin) VALUES ( '" + tbUsuario.Text + "', '" + tbContrasena.Text + "', " + esAdmin + ")";
-
-            OleDbCommand comando = new OleDbCommand(query, conexion);
-            comando.ExecuteNonQuery();
-
-            lbUsuarios.Items.Clear();
-
-            String query2 = "SELECT * FROM Usuarios";
-
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
-
-            DataSet d = new DataSet();
-            adapter.Fill(d);
-
-            foreach (DataRow row in d.Tables[0].Rows)
-            {
-                lbUsuarios.Items.Add(row["Usuario"]);
-            }
-
-            conexion.Close();
-
-            MessageBox.Show("Nuevo usuario: " + "\nNombre: " + tbUsuario.Text + " \nContraseña: " + tbContrasena.Text, "Añadir usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
-
-            conexion.Open();
-
-            if (cbAdmin.Checked)
+            if (tbUsuarioModificar.Text == "" || tbContrasenaModificar.Text == "")
             {
-                esAdmin = 1;
+                MessageBox.Show("Introduce datos en los campos!!", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            } else {
+
+                OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
+
+                conexion.Open();
+
+                if (cbAdmin.Checked)
+                {
+                    esAdmin = 1;
+
+                }
+                else
+                {
+
+                    esAdmin = 0;
+                }
+
+                String query = "UPDATE Usuarios SET Usuario = '" + tbUsuarioModificar.Text + "', Contrasena = '" + tbContrasenaModificar.Text + "', Admin = " + esAdmin + " WHERE Usuario = '" + lbUsuarios.SelectedItem + "'";
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+                comando.ExecuteNonQuery();
+
+                lbUsuarios.Items.Clear();
+
+                String query2 = "SELECT * FROM Usuarios";
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
+
+                DataSet d = new DataSet();
+                adapter.Fill(d);
+
+                foreach (DataRow row in d.Tables[0].Rows)
+                {
+                    lbUsuarios.Items.Add(row["Usuario"]);
+                }
+
+                conexion.Close();
+
+                MessageBox.Show("Usurio modificado: " + "\nNombre: " + tbUsuarioModificar.Text + " \nContraseña: " + tbContrasenaModificar.Text, "Modificar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
-
-                esAdmin = 0;
-            }
-
-            String query = "UPDATE Usuarios SET Usuario = '" + tbUsuarioModificar.Text + "', Contrasena = '" + tbContrasenaModificar.Text + "', Admin = " + esAdmin + " WHERE Usuario = '" + lbUsuarios.SelectedItem + "'";
-
-            OleDbCommand comando = new OleDbCommand(query, conexion);
-            comando.ExecuteNonQuery();
-
-            lbUsuarios.Items.Clear();
-
-            String query2 = "SELECT * FROM Usuarios";
-
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
-
-            DataSet d = new DataSet();
-            adapter.Fill(d);
-
-            foreach (DataRow row in d.Tables[0].Rows)
-            {
-                lbUsuarios.Items.Add(row["Usuario"]);
-            }
-
-            conexion.Close();
-
-            MessageBox.Show("Usurio modificado: " + "\nNombre: " + tbUsuarioModificar.Text + " \nContraseña: " + tbContrasenaModificar.Text, "Modificar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
-
-            conexion.Open();
-
-            if (cbAdmin.Checked)
+            if (lbUsuarios.SelectedItem == null)
             {
-                esAdmin = 1;
+                MessageBox.Show("Selecciona un producto para eliminar!!", "Producto no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else
             {
+                OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
-                esAdmin = 0;
+                conexion.Open();
+
+                if (cbAdmin.Checked)
+                {
+                    esAdmin = 1;
+
+                }
+                else
+                {
+
+                    esAdmin = 0;
+                }
+
+                MessageBox.Show("Usuario eliminado: " + "\nNombre: " + lbUsuarios.SelectedItem, "Eliminar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                String query = "DELETE * FROM Usuarios WHERE Usuario = '" + lbUsuarios.SelectedItem + "'";
+
+                OleDbCommand comando = new OleDbCommand(query, conexion);
+                comando.ExecuteNonQuery();
+
+                lbUsuarios.Items.Clear();
+
+                String query2 = "SELECT * FROM Usuarios";
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
+
+                DataSet d = new DataSet();
+                adapter.Fill(d);
+
+                foreach (DataRow row in d.Tables[0].Rows)
+                {
+                    lbUsuarios.Items.Add(row["Usuario"]);
+                }
+
+                conexion.Close();
             }
-
-            String query = "DELETE * FROM Usuarios WHERE Usuario = '" + lbUsuarios.SelectedItem + "'";
-
-            OleDbCommand comando = new OleDbCommand(query, conexion);
-            comando.ExecuteNonQuery();
-
-            lbUsuarios.Items.Clear();
-
-            String query2 = "SELECT * FROM Usuarios";
-
-            OleDbDataAdapter adapter = new OleDbDataAdapter(query2, conexion);
-
-            DataSet d = new DataSet();
-            adapter.Fill(d);
-
-            foreach (DataRow row in d.Tables[0].Rows)
-            {
-                lbUsuarios.Items.Add(row["Usuario"]);
-            }
-
-            conexion.Close();
-
-            MessageBox.Show("Usuario eliminado: " + "\nNombre: " + lbUsuarios.SelectedItem, "Eliminar usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void cargarForm(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
             conexion.Open();
 

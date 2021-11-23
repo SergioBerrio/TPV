@@ -19,7 +19,6 @@ namespace TPV
     public partial class FormConsumirProductos : Form
     {
         String nombre;
-        //ArrayList arrayListCantidades = new ArrayList();
 
         String producto = "";
         double precio = 0;
@@ -34,7 +33,7 @@ namespace TPV
         {
             int aux = -1;
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
             conexion.Open();
 
@@ -86,7 +85,7 @@ namespace TPV
 
         private void FormConsumirProductos_Load(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
             conexion.Open();
 
@@ -108,7 +107,9 @@ namespace TPV
 
             ArrayList myAL = new ArrayList();
 
-            OleDbDataAdapter adapter2 = new OleDbDataAdapter("SELECT * FROM Productos", conexion);
+            String query2 = "SELECT * FROM Productos";
+
+            OleDbDataAdapter adapter2 = new OleDbDataAdapter(query2, conexion);
 
             DataSet d2 = new DataSet();
             adapter2.Fill(d2);
@@ -242,7 +243,7 @@ namespace TPV
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("========================================"));
                 for (int i = 0; i < lbSeleccionProductos.Items.Count; i++)
                 {
-                    OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
+                    OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
                     conexion.Open();
 
@@ -255,7 +256,6 @@ namespace TPV
 
                     foreach (DataRow row in d.Tables[0].Rows)
                     {
-
                         producto = lbSeleccionProductos.Items[i].ToString();
 
                         precio = Convert.ToDouble(row["Precio"]);
@@ -263,7 +263,6 @@ namespace TPV
                         importe = precio;
 
                         page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(producto + "                     " + precio + "                        " + importe));
-
 
                         try
                         {
@@ -278,18 +277,44 @@ namespace TPV
                             OleDbCommand comando = new OleDbCommand(query2, conexion2);
                             comando.ExecuteNonQuery();
 
-                            conexion2.Close();
-
                             dgvProductos.Rows.Clear();
                             dgvProductos.Refresh();
+
+                            ArrayList myAL = new ArrayList();
+
+                            String query3 = "SELECT * FROM Productos";
+
+                            OleDbDataAdapter adapter2 = new OleDbDataAdapter(query3, conexion);
+
+                            DataSet d2 = new DataSet();
+                            adapter2.Fill(d2);
+
+                            foreach (DataRow row2 in d2.Tables[0].Rows)
+                            {
+                                String[] rowProducto2 = new String[6];
+                                rowProducto2[0] = row["Id"] + "";
+                                rowProducto2[1] = row["Nombre"] + "";
+                                rowProducto2[2] = row["Precio"] + "";
+                                rowProducto2[3] = row["Cantidad"] + "";
+                                rowProducto2[4] = row["Impuestos"] + "";
+                                rowProducto2[5] = row["Total"] + "";
+                                myAL.Add(rowProducto2);
+                            }
+
+                            foreach (String[] linea in myAL)
+                            {
+                                dgvProductos.Rows.Add(linea);
+                            }
+
+                            conexion2.Close();
 
                         } catch (Exception ex)
                         {
                             Console.WriteLine(ex.Message);
                         }
-                        
                     }
                 }
+
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("=========================================="));
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(" Importe Base: " + tbSubtotal.Text + "     " + "IVA " + tbImpuestos.Text + "        " + "Importe IVA: " + (Convert.ToDouble(tbSubtotal.Text.Split(' ')[0]) * 0.1).ToString() + " €"));
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("=========================================="));
@@ -299,8 +324,14 @@ namespace TPV
                 String rutaPDF = "C:/DATOS/Factura.pdf";
                 factura.Save(rutaPDF);
                 System.Diagnostics.Process.Start("C:/DATOS/Factura.pdf");
-            }
 
+                lbProductos.SelectedIndex = 0;
+                lbSeleccionProductos.Items.Clear();
+                tbSubtotal.Text = " €";
+                tbImpuestos.Text = "10 %";
+                tbTotal.Text = " €";
+                
+            }
         }
 
         private void elegirProducto(object sender, MouseEventArgs e)
@@ -310,7 +341,7 @@ namespace TPV
             double subtotal;
             int impuestos;
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
             conexion.Open();
 

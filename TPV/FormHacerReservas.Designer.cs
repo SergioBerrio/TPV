@@ -72,8 +72,8 @@ namespace TPV
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.Location = new System.Drawing.Point(23, 42);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(172, 49);
-            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Size = new System.Drawing.Size(190, 49);
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -133,7 +133,7 @@ namespace TPV
             this.btnModificar.Location = new System.Drawing.Point(239, 156);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(192, 48);
-            this.btnModificar.TabIndex = 8;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -193,7 +193,7 @@ namespace TPV
             this.btnAnadir.Location = new System.Drawing.Point(299, 150);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(172, 48);
-            this.btnAnadir.TabIndex = 4;
+            this.btnAnadir.TabIndex = 1;
             this.btnAnadir.Text = "Añadir";
             this.btnAnadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAnadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -207,7 +207,7 @@ namespace TPV
             this.btnAtras.Location = new System.Drawing.Point(603, 461);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(128, 42);
-            this.btnAtras.TabIndex = 32;
+            this.btnAtras.TabIndex = 4;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAtras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

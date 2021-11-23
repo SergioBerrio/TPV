@@ -35,7 +35,7 @@ namespace TPV
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
             conexion.Open();
 
@@ -62,6 +62,7 @@ namespace TPV
             conexion.Close();
 
             MessageBox.Show("Has reservado en la fecha: " + mcInsertar.SelectionRange.Start.ToString("dd/MM/yyyy") + " y de tipo " + cbTipo.Text, "Nueva reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         private void mcModificar_DateSelected(object sender, DateRangeEventArgs e)
@@ -76,7 +77,7 @@ namespace TPV
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
             conexion.Open();
 
@@ -107,7 +108,7 @@ namespace TPV
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
             conexion.Open();
 
@@ -141,11 +142,9 @@ namespace TPV
             cbTipo.SelectedItem = "Comida";
             cbTipoModificar.SelectedItem = "Comida";
 
-            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database1.accdb");
+            OleDbConnection conexion = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=../../Database/Database1.accdb");
 
             conexion.Open();
-
-            Console.WriteLine(nombreUsuarioLogeado);
 
             String query = "SELECT * FROM Usuarios WHERE Usuario = '" + nombreUsuarioLogeado + "'";
 

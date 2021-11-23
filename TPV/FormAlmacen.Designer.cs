@@ -88,7 +88,7 @@ namespace TPV
             this.btnEliminar.Location = new System.Drawing.Point(33, 46);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(176, 48);
-            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -149,7 +149,7 @@ namespace TPV
             this.tbCantidadModificar.Location = new System.Drawing.Point(122, 127);
             this.tbCantidadModificar.Name = "tbCantidadModificar";
             this.tbCantidadModificar.Size = new System.Drawing.Size(99, 20);
-            this.tbCantidadModificar.TabIndex = 12;
+            this.tbCantidadModificar.TabIndex = 7;
             // 
             // tbPrecioModificar
             // 
@@ -158,7 +158,7 @@ namespace TPV
             this.tbPrecioModificar.Location = new System.Drawing.Point(122, 84);
             this.tbPrecioModificar.Name = "tbPrecioModificar";
             this.tbPrecioModificar.Size = new System.Drawing.Size(99, 20);
-            this.tbPrecioModificar.TabIndex = 11;
+            this.tbPrecioModificar.TabIndex = 6;
             // 
             // tbProductoModificar
             // 
@@ -167,7 +167,7 @@ namespace TPV
             this.tbProductoModificar.Location = new System.Drawing.Point(122, 48);
             this.tbProductoModificar.Name = "tbProductoModificar";
             this.tbProductoModificar.Size = new System.Drawing.Size(99, 20);
-            this.tbProductoModificar.TabIndex = 10;
+            this.tbProductoModificar.TabIndex = 5;
             // 
             // btnModificar
             // 
@@ -293,7 +293,7 @@ namespace TPV
             this.btnAtras.Location = new System.Drawing.Point(582, 368);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(131, 43);
-            this.btnAtras.TabIndex = 32;
+            this.btnAtras.TabIndex = 10;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAtras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
