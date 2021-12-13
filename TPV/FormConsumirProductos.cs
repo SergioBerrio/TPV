@@ -298,6 +298,7 @@ namespace TPV
                                 rowProducto2[3] = row["Cantidad"] + "";
                                 rowProducto2[4] = row["Impuestos"] + "";
                                 rowProducto2[5] = row["Total"] + "";
+                                rowProducto2[6] = row["minimo_disponible"] + "";
                                 myAL.Add(rowProducto2);
                             }
 

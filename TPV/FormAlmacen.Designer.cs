@@ -51,6 +51,8 @@ namespace TPV
             this.tbProducto = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.btnImprimirFactura = new System.Windows.Forms.Button();
+            this.cbElegir = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -300,11 +302,41 @@ namespace TPV
             this.btnAtras.UseVisualStyleBackColor = true;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // btnImprimirFactura
+            // 
+            this.btnImprimirFactura.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnImprimirFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirFactura.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirFactura.Image")));
+            this.btnImprimirFactura.Location = new System.Drawing.Point(582, 291);
+            this.btnImprimirFactura.Name = "btnImprimirFactura";
+            this.btnImprimirFactura.Size = new System.Drawing.Size(131, 50);
+            this.btnImprimirFactura.TabIndex = 37;
+            this.btnImprimirFactura.Text = "Imprimir informe";
+            this.btnImprimirFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimirFactura.UseVisualStyleBackColor = false;
+            this.btnImprimirFactura.Click += new System.EventHandler(this.btnImprimirFactura_Click);
+            // 
+            // cbElegir
+            // 
+            this.cbElegir.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbElegir.FormattingEnabled = true;
+            this.cbElegir.Items.AddRange(new object[] {
+            "Access",
+            "MySql"});
+            this.cbElegir.Location = new System.Drawing.Point(474, 291);
+            this.cbElegir.Name = "cbElegir";
+            this.cbElegir.Size = new System.Drawing.Size(84, 21);
+            this.cbElegir.TabIndex = 38;
+            // 
             // FormAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 427);
+            this.Controls.Add(this.cbElegir);
+            this.Controls.Add(this.btnImprimirFactura);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -349,5 +381,7 @@ namespace TPV
         private System.Windows.Forms.TextBox tbCantidadModificar;
         private System.Windows.Forms.TextBox tbPrecioModificar;
         private System.Windows.Forms.TextBox tbProductoModificar;
+        private System.Windows.Forms.Button btnImprimirFactura;
+        private System.Windows.Forms.ComboBox cbElegir;
     }
 }

@@ -42,14 +42,14 @@ namespace TPV
             this.lbSeleccionProductos = new System.Windows.Forms.ListBox();
             this.gbProductos = new System.Windows.Forms.GroupBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.btnImprimirFactura = new System.Windows.Forms.Button();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbImportes.SuspendLayout();
             this.gbProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -199,36 +199,6 @@ namespace TPV
             this.dgvProductos.Size = new System.Drawing.Size(643, 175);
             this.dgvProductos.TabIndex = 41;
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Nombre";
-            this.Name.Name = "Name";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Precio";
-            this.Price.Name = "Price";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Cantidad";
-            this.Quantity.Name = "Quantity";
-            // 
-            // Tax
-            // 
-            this.Tax.HeaderText = "Impuestos";
-            this.Tax.Name = "Tax";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            // 
             // btnEliminarProducto
             // 
             this.btnEliminarProducto.BackColor = System.Drawing.Color.Red;
@@ -260,6 +230,36 @@ namespace TPV
             this.btnImprimirFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimirFactura.UseVisualStyleBackColor = false;
             this.btnImprimirFactura.Click += new System.EventHandler(this.btnImprimirFactura_Click);
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
+            // Tax
+            // 
+            this.Tax.HeaderText = "Impuestos";
+            this.Tax.Name = "Tax";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Cantidad";
+            this.Quantity.Name = "Quantity";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Precio";
+            this.Price.Name = "Price";
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Nombre";
+            this.Name.Name = "Name";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
             // 
             // FormConsumirProductos
             // 
