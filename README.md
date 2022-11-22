@@ -1,2 +1,1 @@
-# TPV-Restaurante-.NET
-Aplicación de gestión de restaurante programada en C# y .NET.
+# TPV de gestión de restaurante en C# y .NET
